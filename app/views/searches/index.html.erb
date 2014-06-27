@@ -1,10 +1,10 @@
-<%= form_tag("/", method: "post") do %>
+<%= form_for @rides do |t| %>
 
-  <%= label_tag(:s, "Starting point") %>
-  <%= text_field_tag(:s) %>
+  <%= label_tag(:starting_point, "Starting point") %>
+  <%= text_field_tag(:starting_point) %>
 
-  <%= label_tag(:d, "Destination") %>
-  <%= text_field_tag(:d) %>
+  <%= label_tag(:destination, "Destination") %>
+  <%= text_field_tag(:destination) %>
 
   <%= submit_tag "Ride!" %>
 

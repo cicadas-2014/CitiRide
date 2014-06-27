@@ -1,3 +1,18 @@
-
-
 <%= link_to "Save your ride?" %>
+
+<%= form_tag("/create", method: "post") do %>
+
+  <%= label_tag(:starting_point, "Starting point") %>
+  <%= text_field_tag(:starting_point) %>
+
+  <%= label_tag(:destination, "Destination") %>
+  <%= text_field_tag(:destination) %>
+
+  <%= submit_tag "Ride!" %>
+
+<% end %>
+
+<% @rides.each do |ride| %>
+  <%= ride.starting_point %>
+  <%= ride.destination  %>
+<% end %>

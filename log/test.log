@@ -210,3 +210,297 @@ Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
   [1m[35m (0.1ms)[0m  BEGIN
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (24.5ms)[0m  CREATE TABLE "rides" ("id" serial primary key, "starting_point" character varying(255), "destination" character varying(255), "user_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "stations" ("id" serial primary key, "name" character varying(255), "latitude" float, "longitude" float, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (3.4ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying(255), "username" character varying(255), "password_digest" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140627150928')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140626214958')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140626215012')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'est' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'xander.kilback@effertzconn.biz' LIMIT 1[0m
+  [1m[35mSQL (15.7ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 20:26:31.736575"], ["email", "xander.kilback@effertzconn.biz"], ["password_digest", "$2a$04$4gBZ9uaB34ZT7mBBuUWUHOfaD7Yh/crxlmuwz0W6evJxD6/0FP6ZC"], ["updated_at", "2014-06-27 20:26:31.736575"], ["username", "est"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 20:26:31.806073"], ["destination", "826 Brain Bypass"], ["starting_point", "9043 Demetris Points"], ["updated_at", "2014-06-27 20:26:31.806073"], ["user_id", 1]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'necessitatibus' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'broderick@grimes.name' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 20:26:31.814747"], ["email", "broderick@grimes.name"], ["password_digest", "$2a$04$VTCTrlmSH9FlcXU7PmhicellKqDbI/J7hXkMji1.4oes8Q/C5qSb6"], ["updated_at", "2014-06-27 20:26:31.814747"], ["username", "necessitatibus"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 20:26:31.816416"], ["destination", "67231 Paucek Hollow"], ["starting_point", "5813 Schuppe Extension"], ["updated_at", "2014-06-27 20:26:31.816416"], ["user_id", 2]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2014-06-27 16:26:31 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 22ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-27 16:26:31 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"", "d"=>"", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'corporis' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'mohammad@monahan.net' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 20:26:31.866073"], ["email", "mohammad@monahan.net"], ["password_digest", "$2a$04$mGa6CTEh3yD5A/lowzbhnOkpXkygbfkDxJa3UikBpIhE7b3ywwKP2"], ["updated_at", "2014-06-27 20:26:31.866073"], ["username", "corporis"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 20:26:31.867899"], ["destination", "6383 Sanford Extensions"], ["starting_point", "1131 Ruecker Fork"], ["updated_at", "2014-06-27 20:26:31.867899"], ["user_id", 3]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'qui' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'dillan@muelleraltenwerth.biz' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 20:26:31.873213"], ["email", "dillan@muelleraltenwerth.biz"], ["password_digest", "$2a$04$BVPWnA7VHTQsVsIWCIA7juagpywCe4SllxdHHusupl.xCQuP22gCG"], ["updated_at", "2014-06-27 20:26:31.873213"], ["username", "qui"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 20:26:31.874760"], ["destination", "41298 Rosalee Garden"], ["starting_point", "299 Pamela Roads"], ["updated_at", "2014-06-27 20:26:31.874760"], ["user_id", 4]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2014-06-27 16:26:31 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'doloremque' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'libby@kunze.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 20:26:31.890186"], ["email", "libby@kunze.org"], ["password_digest", "$2a$04$9RTLDV0kj9zTJ0xJIZyuEezd/RJej/12pMrCI1makB929y714iPXK"], ["updated_at", "2014-06-27 20:26:31.890186"], ["username", "doloremque"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 20:26:31.892377"], ["destination", "497 McLaughlin Stream"], ["starting_point", "356 Marty Shoal"], ["updated_at", "2014-06-27 20:26:31.892377"], ["user_id", 5]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'deserunt' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'gino.moore@boyerdamore.info' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 20:26:31.900528"], ["email", "gino.moore@boyerdamore.info"], ["password_digest", "$2a$04$m0/yN5iwQt5Um5hNIx83e.5ltriDMvEgiuZuseDzzItxovlLxKr8u"], ["updated_at", "2014-06-27 20:26:31.900528"], ["username", "deserunt"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 20:26:31.902751"], ["destination", "5729 Zulauf Inlet"], ["starting_point", "38186 Destin Corners"], ["updated_at", "2014-06-27 20:26:31.902751"], ["user_id", 6]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2014-06-27 16:26:31 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 46ms (Views: 45.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'qui' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'magnus_cremin@rutherford.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 20:43:36.565380"], ["email", "magnus_cremin@rutherford.com"], ["password_digest", "$2a$04$uDe3b/.ZylpgSs0DgUJ1ceKfuyuVT2wBmwvgx3/.JMovst2GtgCLu"], ["updated_at", "2014-06-27 20:43:36.565380"], ["username", "qui"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 20:43:36.574671"], ["destination", "6499 Hettinger Knoll"], ["starting_point", "19653 Darby Junctions"], ["updated_at", "2014-06-27 20:43:36.574671"], ["user_id", 7]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'quam' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'casper.kuhn@stroman.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 20:43:36.583004"], ["email", "casper.kuhn@stroman.com"], ["password_digest", "$2a$04$He0hmpmxGjczDpkLBJxB6um/zAqSxzWqkbd83ZWWlIaErgGNU6cFe"], ["updated_at", "2014-06-27 20:43:36.583004"], ["username", "quam"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 20:43:36.584798"], ["destination", "6983 Kovacek Point"], ["starting_point", "8573 Ephraim River"], ["updated_at", "2014-06-27 20:43:36.584798"], ["user_id", 8]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2014-06-27 16:43:36 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 64ms (Views: 55.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'omnis' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'verona_hartmann@herman.info' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 20:43:36.670408"], ["email", "verona_hartmann@herman.info"], ["password_digest", "$2a$04$ArmdoXybeIRKWsggs1wpU.gHNHU0oMnk3gwbG9Ji3z2L/UFnhHkFq"], ["updated_at", "2014-06-27 20:43:36.670408"], ["username", "omnis"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 20:43:36.672153"], ["destination", "18384 Jakayla Pass"], ["starting_point", "5365 Monserrat Port"], ["updated_at", "2014-06-27 20:43:36.672153"], ["user_id", 9]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'vel' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'heaven@wolff.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 20:43:36.677380"], ["email", "heaven@wolff.com"], ["password_digest", "$2a$04$gzMkrQzzRrkJs5eziexY/ulycwan4fsK9cHm1OBodLfPii.eX.ELS"], ["updated_at", "2014-06-27 20:43:36.677380"], ["username", "vel"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 20:43:36.679394"], ["destination", "30985 Konopelski Hills"], ["starting_point", "650 Newton Canyon"], ["updated_at", "2014-06-27 20:43:36.679394"], ["user_id", 10]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2014-06-27 16:43:36 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'sed' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'dakota_oconner@ferry.info' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 20:43:36.692567"], ["email", "dakota_oconner@ferry.info"], ["password_digest", "$2a$04$IQugI5i29TJ6KaE5DhDEUeNmEoSXxkK1y4BItRnnUFLS.aAudoPOS"], ["updated_at", "2014-06-27 20:43:36.692567"], ["username", "sed"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 20:43:36.694347"], ["destination", "3737 Wiza Manors"], ["starting_point", "50478 Orn Radial"], ["updated_at", "2014-06-27 20:43:36.694347"], ["user_id", 11]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'dolor' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'seth@rau.net' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 20:43:36.701027"], ["email", "seth@rau.net"], ["password_digest", "$2a$04$mYoUyXj5nKIcWTNwS8hLt.AAAhRY3xNzSo7SWhsww5TjZAQd/XtbS"], ["updated_at", "2014-06-27 20:43:36.701027"], ["username", "dolor"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 20:43:36.703218"], ["destination", "387 Kuhn Lane"], ["starting_point", "88553 Schinner Union"], ["updated_at", "2014-06-27 20:43:36.703218"], ["user_id", 12]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2014-06-27 16:43:36 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-27 16:43:36 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"", "d"=>"", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 6ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'fugit' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'theresa@stammschneider.net' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 20:57:52.781495"], ["email", "theresa@stammschneider.net"], ["password_digest", "$2a$04$bnzSStqLf07dSoMRvTwYCOTgwOMEtiB2RGNy1n/.Sd3Z.QXxM8a3i"], ["updated_at", "2014-06-27 20:57:52.781495"], ["username", "fugit"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 20:57:52.789943"], ["destination", "46611 Jewel Brook"], ["starting_point", "83542 Braun Forge"], ["updated_at", "2014-06-27 20:57:52.789943"], ["user_id", 13]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'velit' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'laura_abshire@koepp.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 20:57:52.798388"], ["email", "laura_abshire@koepp.com"], ["password_digest", "$2a$04$DyycwVDop3XvW9L9JFxnluhhx6V/wyfQnFx5ED1O5.HXe3giM9Eky"], ["updated_at", "2014-06-27 20:57:52.798388"], ["username", "velit"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 20:57:52.800304"], ["destination", "61645 Florencio Knoll"], ["starting_point", "87738 Cathy Springs"], ["updated_at", "2014-06-27 20:57:52.800304"], ["user_id", 14]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2014-06-27 16:57:52 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 63ms (Views: 54.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'itaque' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'ewell_kuhic@kris.net' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 20:57:52.885413"], ["email", "ewell_kuhic@kris.net"], ["password_digest", "$2a$04$j5kkLjzsjFkMxUmV.AHff.GiBlfPD2lxWn57AZHX90beAB35Eurb6"], ["updated_at", "2014-06-27 20:57:52.885413"], ["username", "itaque"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 20:57:52.887861"], ["destination", "19336 Goodwin Plains"], ["starting_point", "479 Feeney Avenue"], ["updated_at", "2014-06-27 20:57:52.887861"], ["user_id", 15]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'earum' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'lucious@moorewill.info' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 20:57:52.893934"], ["email", "lucious@moorewill.info"], ["password_digest", "$2a$04$xplfLNZYqAydFJYalTDeP.ju1Z708PkbNCNdoioWDVKoC7Kj2SEi2"], ["updated_at", "2014-06-27 20:57:52.893934"], ["username", "earum"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 20:57:52.895469"], ["destination", "703 Litzy Hollow"], ["starting_point", "390 DuBuque Glens"], ["updated_at", "2014-06-27 20:57:52.895469"], ["user_id", 16]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2014-06-27 16:57:52 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started POST "/create" for 127.0.0.1 at 2014-06-27 16:57:52 -0400
+Processing by RidesController#create as HTML
+  Parameters: {"utf8"=>"✓", "starting_point"=>"", "destination"=>"", "commit"=>"Ride!"}
+Completed 400 Bad Request in 1ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'aut' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'augustine.goodwin@blick.biz' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 20:57:52.916639"], ["email", "augustine.goodwin@blick.biz"], ["password_digest", "$2a$04$CI8IPQwDf8e4Y/UTThrbdevVGNctcA8YxhtCOeh4CnTTJZuaVrz5S"], ["updated_at", "2014-06-27 20:57:52.916639"], ["username", "aut"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 20:57:52.919199"], ["destination", "70605 Pacocha Harbors"], ["starting_point", "353 Corkery Cliffs"], ["updated_at", "2014-06-27 20:57:52.919199"], ["user_id", 17]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'praesentium' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'taylor@collier.net' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 20:57:52.926171"], ["email", "taylor@collier.net"], ["password_digest", "$2a$04$3s/NVzvBiBKNHrLnpn0FkOOrU.eVbtDDuslQI1P/AT3px/ms93H4e"], ["updated_at", "2014-06-27 20:57:52.926171"], ["username", "praesentium"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 20:57:52.927853"], ["destination", "1559 Kris Flats"], ["starting_point", "4039 Jorge Squares"], ["updated_at", "2014-06-27 20:57:52.927853"], ["user_id", 18]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2014-06-27 16:57:52 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'voluptatem' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'amely.klocko@prohaskahackett.net' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 21:00:24.272371"], ["email", "amely.klocko@prohaskahackett.net"], ["password_digest", "$2a$04$.HdBvMjtp1VvSRLSa8k2.OtKtPI7l6iwa7zcTrREoZ8Ah28/47hEC"], ["updated_at", "2014-06-27 21:00:24.272371"], ["username", "voluptatem"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 21:00:24.324890"], ["destination", "99382 Hammes Ports"], ["starting_point", "396 Lemke Path"], ["updated_at", "2014-06-27 21:00:24.324890"], ["user_id", 19]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'sed' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'dusty_gibson@heathcote.info' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 21:00:24.333462"], ["email", "dusty_gibson@heathcote.info"], ["password_digest", "$2a$04$1LNhgMrlGQa3DVh4EtQjkeTfY0s/6DOoP0LjOYmsByKieCSBYVR82"], ["updated_at", "2014-06-27 21:00:24.333462"], ["username", "sed"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 21:00:24.335276"], ["destination", "826 Corkery Mission"], ["starting_point", "54135 Jacky Circle"], ["updated_at", "2014-06-27 21:00:24.335276"], ["user_id", 20]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2014-06-27 17:00:24 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 22ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'eos' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'alexandrea@kleinluettgen.net' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 21:00:24.378758"], ["email", "alexandrea@kleinluettgen.net"], ["password_digest", "$2a$04$49xAZiOqc9cdb3Ezm.lUm.cNtDhi4ScGVyuugn7ZNxFXOWZHFoNNO"], ["updated_at", "2014-06-27 21:00:24.378758"], ["username", "eos"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 21:00:24.380990"], ["destination", "998 Morar Wells"], ["starting_point", "884 Flatley Cliff"], ["updated_at", "2014-06-27 21:00:24.380990"], ["user_id", 21]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'earum' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'clara@ferry.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 21:00:24.387927"], ["email", "clara@ferry.com"], ["password_digest", "$2a$04$NDcCbkLjPl4ETyUo30KlL.moLV0f/nTMooSa2DGA0n5WsK4YbsLEy"], ["updated_at", "2014-06-27 21:00:24.387927"], ["username", "earum"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 21:00:24.389820"], ["destination", "303 Matilde Glens"], ["starting_point", "835 Dillan Motorway"], ["updated_at", "2014-06-27 21:00:24.389820"], ["user_id", 22]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2014-06-27 17:00:24 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started POST "/rides/create" for 127.0.0.1 at 2014-06-27 17:00:24 -0400
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'id' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'devonte.harvey@ruel.info' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 21:00:24.415269"], ["email", "devonte.harvey@ruel.info"], ["password_digest", "$2a$04$//5b5kxu.PfJO0lAg8j0WODaqNMVfarO21YCtQn23zJlK9ZiOKjBm"], ["updated_at", "2014-06-27 21:00:24.415269"], ["username", "id"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 21:00:24.417484"], ["destination", "59485 Jon Junction"], ["starting_point", "1195 Hillard Motorway"], ["updated_at", "2014-06-27 21:00:24.417484"], ["user_id", 23]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'consequatur' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'meda@von.info' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-27 21:00:24.470211"], ["email", "meda@von.info"], ["password_digest", "$2a$04$tBaVu9exrutEkyvmr5Uvr.8.d2YDqmMnvsCRqOvLoIDogCQwRFZGi"], ["updated_at", "2014-06-27 21:00:24.470211"], ["username", "consequatur"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "rides" ("created_at", "destination", "starting_point", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-27 21:00:24.472705"], ["destination", "749 Berge Street"], ["starting_point", "30907 Arnoldo Ports"], ["updated_at", "2014-06-27 21:00:24.472705"], ["user_id", 24]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2014-06-27 17:00:24 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m

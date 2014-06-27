@@ -1,0 +1,11 @@
+<%= form_for @ride do |f| %>
+
+  <%= f.label :starting_point %>
+  <%= f.text_field :starting_point %>
+
+  <%= f.label :destination %>
+  <%= f.text_field :destination %>
+
+  <%= submit_tag "Ride!" %>
+
+<% end %>
