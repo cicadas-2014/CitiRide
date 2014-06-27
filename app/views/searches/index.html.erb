@@ -1,0 +1,11 @@
+<%= form_tag("/", method: "post") do %>
+
+  <%= label_tag(:s, "Starting point") %>
+  <%= text_field_tag(:s) %>
+
+  <%= label_tag(:d, "Destination") %>
+  <%= text_field_tag(:d) %>
+
+  <%= submit_tag "Ride!" %>
+
+<% end %>
