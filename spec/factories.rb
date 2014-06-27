@@ -12,4 +12,10 @@ FactoryGirl.define do
     user
   end
 
+  factory :station do
+    name {Faker::Address.street_address}
+    latitude {40.76727216}
+    longitude {-73.99392888}
+  end
+
 end
