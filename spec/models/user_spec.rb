@@ -40,4 +40,8 @@ describe User do
     user = User.new(username: "abc", email: "foo1@bar.com", password: "123456")
     expect(user).to have(1).errors_on(:username)
   end
+
+  # it "should have many rides" do
+  #   should have_many :rides
+  # end
 end
