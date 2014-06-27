@@ -10,9 +10,9 @@ describe Ride do
   end
 
   it "should belong to a user" do
-    # ride = Ride.new(starting_point: "48 Wall St", destination: "Empire State Building")
-    # user = User.new(username: "abc", email: "foo@bar.com", password: "1234567")
-    # user.rides << ride
-    # expect(ride).to belong_to user
+    ride = Ride.new(starting_point: "48 Wall St", destination: "Empire State Building")
+    user = User.new(username: "abc", email: "foo@bar.com", password: "1234567")
+    user.rides << ride
+    expect(ride).to belong_to user
   end
 end
