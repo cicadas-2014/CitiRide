@@ -1,18 +1,22 @@
-<% form_for @user do |f| %>
-  <li>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </li>
-  <li>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </li>
-  <li>
-    <%= f.label :password %>
-    <%= f.text_field :password_digest %>
-  </li>
-  <li>
-    <%= f.submit %>
-  </li>
+<ul>
+  <%= form_for @user do |f| %>
+    <li>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </li>
+    <li>
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+    </li>
+    <li>
+      <%= f.label :password %>
+      <%= f.text_field :password %>
+    </li>
+    <li>
+      <%= f.label :password_confirmation %>
+      <%= f.text_field :password_confirmation %>
+    <li>
+      <%= f.submit %>
+    </li>
   <% end %>
 </ul>

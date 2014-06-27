@@ -18,7 +18,7 @@ describe UsersController do
     context 'when valids params are passed' do
       it 'create a new user' do
         expect {
-          post :create, user: (attributes_for :user)
+          post :create, user: attributes_for(:user)
         }.to change { User.count }.by(1)
       end
     end
