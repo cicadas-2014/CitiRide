@@ -17,5 +17,4 @@ FactoryGirl.define do
     latitude {40.76727216}
     longitude {-73.99392888}
   end
-
 end
