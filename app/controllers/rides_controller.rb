@@ -1,10 +1,6 @@
 class RidesController < ApplicationController
 
-  def index
-  end
-
-  def show
-
+  def create
   end
 
 end
