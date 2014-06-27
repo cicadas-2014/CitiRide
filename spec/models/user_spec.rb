@@ -6,7 +6,7 @@ describe User do
       username: "abc",
       email: "foo@bar.com",
       password: "123456"
-    )
+      )
     expect(user).to be_valid
   end
 
@@ -26,7 +26,7 @@ describe User do
     User.create(username: "abc",
       email: "foo@bar.com",
       password: "123456"
-    )
+      )
     user = User.new(username: "dbc", email: "foo@bar.com", password: "123456")
     expect(user).to have(1).errors_on(:email)
   end
@@ -36,12 +36,13 @@ describe User do
       email: "foo@bar.com",
       password: "123456",
       password_confirmation: "123456"
-    )
+      )
     user = User.new(username: "abc", email: "foo1@bar.com", password: "123456")
     expect(user).to have(1).errors_on(:username)
   end
 
-  # it "should have many rides" do
-  #   should have_many :rides
-  # end
+  let(:user) {build(:user)}
+  it "should have many rides" do
+    expect(user).to respond_to :rides
+  end
 end
