@@ -1,0 +1,21 @@
+development:
+  adapter: postgresql
+  database: app_development
+  pool: 5
+  username:
+  password:
+
+test:
+  adapter: postgresql
+  database: app_test
+  pool: 5
+  username:
+  password:
+
+production:
+  adapter: postgresql
+  database: app
+  pool: 5
+  username:
+  password:
+
