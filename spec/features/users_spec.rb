@@ -21,9 +21,9 @@ describe "Users" do
   describe "User signs up" do
     it "logs in user when valid parameters are passed" do
       visit new_user_path
-      fill_in 'Email', with: user.email
-      fill_in 'Username', with: user.username
-      fill_in 'Passwords', with: user.password_digest
+      fill_in 'email', with: user.email
+      fill_in 'username', with: user.username
+      fill_in 'password', with: user.password_digest
       click_button 'Submit'
       expect(response.status).to eq 200
     end
