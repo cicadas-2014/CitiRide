@@ -15,17 +15,35 @@ feature 'User management' do
 
 end
 
-
+ # WIP !!!!!!!!
 describe "Users" do
-  let!(:user) { User.create(email: 'a@a.com', username: 'jake', password_digest: 'jake') }
+  let!(:user) { User.create(email: 'a@a.com', username: 'jake', password: 'jake', password_confirmation: 'jake') }
   describe "User signs up" do
     it "logs in user when valid parameters are passed" do
       visit new_user_path
-      fill_in 'email', with: user.email
-      fill_in 'username', with: user.username
-      fill_in 'password', with: user.password_digest
-      click_button 'Submit'
-      expect(response.status).to eq 200
+      fill_in 'user[email]', with: user.email
+      fill_in 'user[username]', with: user.username
+      fill_in 'user[password]', with: user.password
+      fill_in 'user[password_confirmation]', with: user.password_confirmation
+      click_button 'Create User'
+      binding.pry # <<<<<<<<<<<
+      expect(response).to redirect_to(root_path)
+    end
+  end
+
+  describe "User login" do
+    context "from the root path" do
+      it "displays login form" do
+        visit root_url
+        click_button 'Login'
+        expect(response.status).to eq 200
+      end
+
+      it "directs back to root page upon login" do
+        visit root_url
+        click_button 'Login'
+        expect(response.status).to eq 200
+      end
     end
   end
 end
