@@ -25,8 +25,8 @@ class Controller
   attr_accessor :json_response, :city
   def initialize
     get_json_data
-    create_bike_station_objects
     @bike_stations = []
+    create_bike_station_objects
   end
 
   def get_json_data
@@ -42,19 +42,19 @@ class Controller
     seed_city_stations
   end
 
-  def seed_city_stations(city_stations)
+  def seed_city_stations
     @city = City.new({ city_name: "New York", list_stations: @bike_stations })
     seed_database
   end
 
   def assign_bike_station_properties(bike_json)
-    args = {  id: bike_json["id"],
-              station_name: bike_json["stationName"],
-              available_docks: bike_json["availableDocks"],
-              total_docks: bike_json["totalDocks"],
-              latitude: bike_json["latitude"],
-              longitude: bike_json["longitude"],
-              available_bikes: bike_json["available_bikes"] }
+    { id: bike_json["id"],
+      station_name: bike_json["stationName"],
+      available_docks: bike_json["availableDocks"],
+      total_docks: bike_json["totalDocks"],
+      latitude: bike_json["latitude"],
+      longitude: bike_json["longitude"],
+      available_bikes: bike_json["available_bikes"] }
   end
 
   def seed_database
