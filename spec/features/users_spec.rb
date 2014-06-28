@@ -1,49 +1,44 @@
-# require 'spec_helper'
+require 'spec_helper'
 
-# feature 'User management', :js => true do
-#   # scenario 'shows the search bar on the home page' do
-#   #   visit root_path
-#   #   expect(page).to have_content 'Starting point'
-#   #   expect(page).to have_content 'Destination'
-#   #   expect(page).to have
-#   # end
+feature 'User management', :js => true do
+  scenario 'signs up with valid user info' do
+    visit root_path
+    fill_in 'Starting point', with: '48 Wall Street'
+    fill_in 'Destination', with: '30 Rockefeller Plaza'
+    click_button 'Ride!'
+    click_on("...or sign up here.")
+    wait_for_ajax_to_finish
+    fill_in 'Username', with: "johnny"
+    fill_in "Email", with: "example@example.com"
+    fill_in 'Password', with: "123456"
+    fill_in 'Password Confirmation', with: "123456"
+    click_on("Sign up")
+    expect(page).to have_content "johnny"
+  end
 
-#   # scenario 'adds a new user' do
-#   #   pending "Create new user"
-#   # end
+  scenario 'fails sign up with invalid user info' do
+    pending 'unhappy case of user sign up'
+  end
 
+  scenario 'logs in with valid user info' do
+    let! (:user) { User.create(username: 'johnny', 
+                              email: 'example@example.com', 
+                              password: '123456', 
+                              password_confirmation: '123456')}
+    visit root_path
+    fill_in 'Starting point', with: '48 Wall Street'
+    fill_in 'Destination', with: '30 Rockefeller Plaza'
+    click_button 'Ride!'
+    click_on("Log in to save your ride?")
+    wait_for_ajax_to_finish
+    fill_in 'Username', with: user.username
+    fill_in "Email", with: user.email
+    fill_in 'Password', with: user.password
+    click_on("Log in")
+    expect(page).to have_content "johnny"
+  end
 
-# end
+  scenario ' fails log in with invalid user info' do
+  end
+end
 
-#  # WIP !!!!!!!!
-# describe "Users" do
-#   let!(:user) { User.create(email: 'a@a.com', username: 'jake', password: 'jake', password_confirmation: 'jake') }
-#   describe "User signs up" do
-#     it "logs in user when valid parameters are passed" do
-#       visit new_user_path
-#       fill_in 'user[email]', with: user.email
-#       fill_in 'user[username]', with: user.username
-#       fill_in 'user[password]', with: user.password
-#       fill_in 'user[password_confirmation]', with: user.password_confirmation
-#       click_button 'Create User'
-#  # <<<<<<<<<<<
-#       expect(response).to redirect_to(root_path)
-#     end
-#   end
-
-#   describe "User login" do
-#     context "from the root path" do
-#       it "displays login form" do
-#         visit root_url
-#         click_button 'Login'
-#         expect(response.status).to eq 200
-#       end
-
-#       it "directs back to root page upon login" do
-#         visit root_url
-#         click_button 'Login'
-#         expect(response.status).to eq 200
-#       end
-#     end
-#   end
-# end
