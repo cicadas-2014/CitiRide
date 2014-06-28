@@ -23,7 +23,6 @@ describe SearchesController do
     end
 
   end
-end
 
   context '#index' do
     it "is successful" do
@@ -52,5 +51,4 @@ end
       expect(response).to be_success
     end
   end
-
 end

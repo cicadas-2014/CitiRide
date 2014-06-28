@@ -4,6 +4,8 @@ class SearchesController < ApplicationController
   end
 
   def show
+    find_closest_stations(params[:s])
+    find_closest_stations(params[:d])
   end
 
   def login
@@ -24,5 +26,3 @@ class SearchesController < ApplicationController
     params.permit(:username, :email, :password, :password_confirmation)
   end
 end
-
-
