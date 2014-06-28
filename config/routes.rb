@@ -2,12 +2,13 @@ Rails.application.routes.draw do
 
   root 'searches#index'
 
-  post '/' => 'searches#show', as: 'search'
-  
+  get 'search' => 'searches#show', as: 'search'
+
   get 'login' => 'searches#login'
   get 'signup' => 'searches#signup'
 
-  resources :users, :rides
+  get 'users/login' => 'users#login'
+  get 'users/signup' => 'users#signup'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -19,12 +19,12 @@ feature 'User management', :js => true do
   scenario 'fails sign up with invalid user info' do
     pending 'unhappy case of user sign up'
   end
-
-  scenario 'logs in with valid user info' do
-    let! (:user) { User.create(username: 'johnny', 
+  
+  let!(:user) { User.create(username: 'johnny', 
                               email: 'example@example.com', 
                               password: '123456', 
                               password_confirmation: '123456')}
+  scenario 'logs in with valid user info' do
     visit root_path
     fill_in 'Starting point', with: '48 Wall Street'
     fill_in 'Destination', with: '30 Rockefeller Plaza'
