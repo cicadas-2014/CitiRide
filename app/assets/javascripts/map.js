@@ -1,25 +1,13 @@
-<script>
-  function initialize(start_latitude, start_longitude) {
-    var myLatlng = new google.maps.LatLng(start_latitude, start_longitude);
 
-    var mapOptions = {
-      zoom: 15,
-      center: myLatlng
-    }
-    map = new google.maps.Map(document.getElementById('map'), mapOptions);
+function initialize(start_latitude, start_longitude) {
+  var myLatlng = new google.maps.LatLng(start_latitude, start_longitude);
 
-    // var marker = new google.maps.Marker({
-    //  position: myLatlng,
-    //  map: map,
-    //  title: 'Hello World!'
-    // });
-    // var marker2 = new google.maps.Marker({
-    //  position: myLatlng2,
-    //  map: map,
-    //  title: 'Hello World!'
-    // });
-
-displayRoute();
+  var mapOptions = {
+    zoom: 15,
+    center: myLatlng
+  }
+  map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  displayRoute();
 }
 
 function displayRoute() {
@@ -62,11 +50,10 @@ function displayRoute() {
   });
 }
 
-google.maps.event.addDomListener(window, 'load', initialize);
+function add(){
+  alert("hello");
+}
 
-</script>
-</head>
-<body>
-  <div id="map" style="height:500px;width:500px"></div>
-
-</body>
+function renderMap() {
+  google.maps.event.addDomListener(window, 'load', initialize);
+}
