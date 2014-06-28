@@ -14,13 +14,4 @@ class SearchesController < ApplicationController
     render :partial => 'signup'
   end
 
-  private
-
-  def login_params
-    params.permit(:username, :email, :password)
-  end
-
-  def signup_params
-    params.permit(:username, :email, :password, :password_confirmation)
-  end
 end
