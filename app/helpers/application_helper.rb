@@ -27,8 +27,10 @@ def find_closest_bike(args)
   closest = station_list.first
   args[:start]
   station_list.each do |station|
-    if google_walking_directions(start: args[:start], destination: "#{station.latitude},#{station.longitude}").distance < google_walking_directions(start: args[:start], "#{closest.latitude},#{closest.longitude}").distance && station.availableBikes > 1
+
+    if google_walking_directions(start: args[:start], destination: "#{station.latitude},#{station.longitude}").distance < google_walking_directions(start: args[:start], destination: "#{closest.latitude},#{closest.longitude}").distance && station.availableBikes > 1
       closest = station
+
     end
   end
   closest
@@ -39,8 +41,10 @@ def find_closest_bike(args)
   closest = station_list.first
   args[:start]
   station_list.each do |station|
-    if google_walking_directions(start: args[:start], destination: "#{station.latitude},#{station.longitude}").distance < google_walking_directions(start: args[:start], "#{closest.latitude},#{closest.longitude}").distance && station.availableDocks > 1
+
+    if google_walking_directions(start: args[:start], destination: "#{station.latitude},#{station.longitude}").distance < google_walking_directions(start: args[:start], destination: "#{closest.latitude},#{closest.longitude}").distance && station.availableDocks > 1
       closest = station
+
     end
   end
   closest
