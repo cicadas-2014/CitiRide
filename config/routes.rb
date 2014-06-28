@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root 'searches#index'
 
   post '/' => 'searches#show', as: 'search'
+  
+  get 'login' => 'searches#login'
+  get 'signup' => 'searches#signup'
 
   resources :users, :rides
 
