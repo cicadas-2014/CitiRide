@@ -32,6 +32,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'pry'
 
+gem 'geocoder'
+
 gem 'google_directions'
 
 group :development, :test do

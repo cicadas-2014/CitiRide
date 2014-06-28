@@ -1,23 +1,35 @@
 class UsersController < ApplicationController
 
-  def new
-    @user = User.new
-  end
-
-  def create
-    @user = User.new(user_params)
-    if @user.save
-      redirect_to root_path
+  def login
+    @user = User.find_by(login_params).try(:authenticate, login_password[:password])
+    if @user
+      redirect_to save_ride_path(@user)
     else
-      render :new
+      redirect_to root_path # need better error messaging
     end
   end
 
-
+  def signup
+    @user = User.new(signup_params)
+    if @user.save
+      redirect_to save_ride_path(@user)
+    else
+      redirect_to root_path # need better error messaging
+    end
+  end
 
   private
 
-  def user_params
-    params.require(:user).permit(:email, :username, :password, :password_confirmation)
+  def login_params
+    params.permit(:username, :email)
   end
+
+  def login_password
+    params.permit(:password)
+  end
+
+  def signup_params
+    params.permit(:username, :email, :password, :password_confirmation)
+  end
+
 end

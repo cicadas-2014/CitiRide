@@ -1,6 +1,7 @@
 class RidesController < ApplicationController
 
-  def create
+  def save
+    
   end
 
 end
