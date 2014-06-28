@@ -26,7 +26,7 @@ describe "Users" do
       fill_in 'user[password]', with: user.password
       fill_in 'user[password_confirmation]', with: user.password_confirmation
       click_button 'Create User'
-      binding.pry # <<<<<<<<<<<
+ # <<<<<<<<<<<
       expect(response).to redirect_to(root_path)
     end
   end
