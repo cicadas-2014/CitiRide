@@ -16,7 +16,7 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
   # Include Factory Girl syntax to simplify calls to factories
   config.include FactoryGirl::Syntax::Methods
-  config.include CapybaraHelpers
+  # config.include CapybaraHelpers
 
   # ## Mock Framework
   #
