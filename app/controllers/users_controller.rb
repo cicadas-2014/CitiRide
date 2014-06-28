@@ -1,19 +1,16 @@
 class UsersController < ApplicationController
 
-  def new
-    @user = User.new
+  def login
   end
 
-  def create
+  def signup
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_path
+      redirect_to save_ride_path(@user)
     else
-      render :new
+      redirect_to root_path # need better error messaging
     end
   end
-
-
 
   private
 

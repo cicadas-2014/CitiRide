@@ -1,36 +1,27 @@
-# require 'spec_helper'
+require 'spec_helper'
 
-# describe UsersController do
+describe UsersController do
 
-#   describe '#new' do
-#     it 'renders a new page' do
-#       get :new
-#       expect(response).to render_template(:new)
-#     end
+  describe '#signup' do
+    context 'when valids params are passed' do
+      it 'create a new user' do
+        expect {
+          post :signup, user: attributes_for(:user)
+        }.to change { User.count }.by(1)
+      end
+    end
 
-#     it 'assigns a user object' do
-#       get :new
-#       expect(assigns(:user)).to be_a_new(User)
-#     end
-#   end
+    context 'when invalid params are passed' do
+      it 'does not add user when the user is existing already' do
+        create(:user, username: 'lol')
+        expect {
+          post :signup, user: attributes_for(:user, username: 'lol')
+        }.to_not change { User.count }.by(1)
+      end
 
-#   describe '#create' do
-#     context 'when valids params are passed' do
-#       it 'create a new user' do
-#         expect {
-#           post :create, user: attributes_for(:user)
-#         }.to change { User.count }.by(1)
-#       end
-#     end
-
-#     context 'when invalid params are passed' do
-#       let!(:user) { attributes_for :user }
-#       it 'returns an error for an invalid user' do
-#         expect {
-#           post :create, user: (attributes_for :user)
-#           post :create, user: (attributes_for :user)
-#         }.to_not change { User.count }.by(1)
-#       end
-#     end
-#   end
-# end
+      it 'does not add user when there is no input' do
+        pending 'User count does not change'
+      end
+    end
+  end
+end
