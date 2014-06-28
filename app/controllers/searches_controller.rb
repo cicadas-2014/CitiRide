@@ -4,6 +4,7 @@ class SearchesController < ApplicationController
   end
 
   def show
+    p find_closest_bike(start: params[:s])
   end
 
   def login
