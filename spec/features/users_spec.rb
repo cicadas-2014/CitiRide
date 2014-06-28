@@ -1,6 +1,6 @@
 # require 'spec_helper'
 
-# feature 'User management' do
+# feature 'User management', :js => true do
 #   # scenario 'shows the search bar on the home page' do
 #   #   visit root_path
 #   #   expect(page).to have_content 'Starting point'

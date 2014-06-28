@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'Searches' do
+feature 'Searches', :js => true do
 
   scenario 'shows the search bar on the home page' do
     visit root_path
@@ -24,7 +24,7 @@ feature 'Searches' do
     fill_in 'Starting point', with: '48 Wall Street'
     fill_in 'Destination', with: '30 Rockefeller Plaza'
     click_button 'Ride!'
-    click('Log in to save your ride?')
+    click_on('Log in to save your ride?')
     wait_for_ajax_to_finish
     expect(page).to have_content "Username"
     expect(page).to have_content "Email"
@@ -38,7 +38,7 @@ feature 'Searches' do
     fill_in 'Starting point', with: '48 Wall Street'
     fill_in 'Destination', with: '30 Rockefeller Plaza'
     click_button 'Ride!'
-    click("...or sign up here.")
+    click_on("...or sign up here.")
     wait_for_ajax_to_finish
     expect(page).to have_content "Username"
     expect(page).to have_content "Email"
