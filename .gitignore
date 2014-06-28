@@ -23,6 +23,7 @@
  
 # Logs and databases #
 ######################
+tmp/**/*
 *.log
 *.sql
 *.sqlite
