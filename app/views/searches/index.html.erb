@@ -1,11 +1,20 @@
-<%= form_tag("/", method: "post") do %>
+<div class="index">
+  <div class="container home">
+    <h1 class="logo">CitiRide</h1>
 
-  <%= label_tag(:s, "Starting point") %>
-  <%= text_field_tag(:s) %>
+    <%= form_tag(search_path, method: "get") do %>
 
-  <%= label_tag(:d, "Destination") %>
-  <%= text_field_tag(:d) %>
+      <%= label_tag(:s, "Starting point") %>
+      <%= text_field_tag(:s) %>
 
-  <%= submit_tag "Ride!" %>
+      <%= label_tag(:d, "Destination") %>
+      <%= text_field_tag(:d) %>
 
-<% end %>
+      <%= submit_tag "Ride!" %>
+
+    <% end %>
+  </div>
+  <footer>
+    Find the best route to pick up your CitiBike and get to your destination.
+  </footer>
+</div>
