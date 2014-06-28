@@ -1,0 +1,11 @@
+<%= form_tag do %>
+  <%= label_tag(:username, 'Username') %>
+  <%= text_field_tag(:username) %>
+  <%= label_tag(:email, 'Email') %>
+  <%= email_field_tag (:email) %>
+  <%= label_tag(:password, 'Password') %>
+  <%= password_field_tag(:password) %>
+  <%= label_tag(:password_confirmation, 'Password Confirmation') %>
+  <%= password_field_tag(:password_confirmation) %>
+  <%= submit_tag('Sign up') %>
+<% end %>

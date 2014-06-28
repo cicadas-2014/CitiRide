@@ -211,9 +211,9 @@ Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
   [1m[35m (0.1ms)[0m  BEGIN
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
   [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
-  [1m[35m (30.7ms)[0m  CREATE TABLE "rides" ("id" serial primary key, "starting_point" character varying(255), "destination" character varying(255), "user_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[35m (30.7ms)[0m  CREATE TABLE "rides" ("id" serial primary key, "starting_point" character varying(255), "destination" character varying(255), "user_id" integer, "created_at" timestamp, "updated_at" timestamp)
   [1m[36m (2.5ms)[0m  [1mCREATE TABLE "stations" ("id" serial primary key, "name" character varying(255), "latitude" float, "longitude" float, "created_at" timestamp, "updated_at" timestamp) [0m
-  [1m[35m (3.2ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying(255), "username" character varying(255), "password_digest" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[35m (3.2ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying(255), "username" character varying(255), "password_digest" character varying(255), "created_at" timestamp, "updated_at" timestamp)
   [1m[36m (0.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
   [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
   [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
@@ -1675,9 +1675,9 @@ Processing by SearchesController#index as HTML
 Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
   [1m[35m (0.2ms)[0m  ROLLBACK
   [1m[36mSQL (0.4ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
-  [1m[35m (5.9ms)[0m  CREATE TABLE "rides" ("id" serial primary key, "starting_point" character varying(255), "destination" character varying(255), "user_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[35m (5.9ms)[0m  CREATE TABLE "rides" ("id" serial primary key, "starting_point" character varying(255), "destination" character varying(255), "user_id" integer, "created_at" timestamp, "updated_at" timestamp)
   [1m[36m (2.4ms)[0m  [1mCREATE TABLE "stations" ("id" serial primary key, "name" character varying(255), "latitude" float, "longitude" float, "created_at" timestamp, "updated_at" timestamp) [0m
-  [1m[35m (3.1ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying(255), "username" character varying(255), "password_digest" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[35m (3.1ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying(255), "username" character varying(255), "password_digest" character varying(255), "created_at" timestamp, "updated_at" timestamp)
   [1m[36m (1.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
   [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
@@ -1929,9 +1929,9 @@ Completed 302 Found in 5ms (ActiveRecord: 1.0ms)
   [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
   [1m[35m (0.1ms)[0m  ROLLBACK
   [1m[36mSQL (0.4ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
-  [1m[35m (5.7ms)[0m  CREATE TABLE "rides" ("id" serial primary key, "starting_point" character varying(255), "destination" character varying(255), "user_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[35m (5.7ms)[0m  CREATE TABLE "rides" ("id" serial primary key, "starting_point" character varying(255), "destination" character varying(255), "user_id" integer, "created_at" timestamp, "updated_at" timestamp)
   [1m[36m (2.2ms)[0m  [1mCREATE TABLE "stations" ("id" serial primary key, "name" character varying(255), "latitude" float, "longitude" float, "created_at" timestamp, "updated_at" timestamp) [0m
-  [1m[35m (3.4ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying(255), "username" character varying(255), "password_digest" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[35m (3.4ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying(255), "username" character varying(255), "password_digest" character varying(255), "created_at" timestamp, "updated_at" timestamp)
   [1m[36m (0.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
   [1m[35m (1.2ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
   [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
@@ -2419,3 +2419,511 @@ Redirected to http://test.host/
 Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
   [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
   [1m[35m (0.1ms)[0m  ROLLBACK
+=======
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:06:51 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 24ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:06:51 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:06:51 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:06:51 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:06:51 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:06:51 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:06:51 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:09:05 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 22ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:09:05 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:09:05 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:09:05 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:09:05 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:09:05 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:09:05 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:09:24 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 22ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:09:24 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:09:24 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:09:24 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:09:24 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:09:24 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:09:24 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:09:24 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:09:24 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:11:33 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 62ms (Views: 52.4ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:11:33 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:11:33 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.3ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (5.1ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'app_test'[0m
+  [1m[35m (8.8ms)[0m  TRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:11:33 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (6.1ms)[0m  [1mTRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:11:33 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:11:33 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (6.2ms)[0m  TRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:11:34 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:11:34 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:11:34 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (6.4ms)[0m  [1mTRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:14:11 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (47.2ms)
+Completed 200 OK in 77ms (Views: 64.9ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2014-06-28 13:14:11 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2014-06-28 13:14:11 -0400
+  [1m[35m (0.6ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (2.3ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'app_test'[0m
+  [1m[35m (6.8ms)[0m  TRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:14:12 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:14:12 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.7ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (2.6ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'app_test'[0m
+  [1m[35m (6.7ms)[0m  TRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:14:12 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:14:12 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:14:12 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.7ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (2.5ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'app_test'[0m
+  [1m[35m (6.3ms)[0m  TRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:14:15 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:14:15 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:14:15 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (6.3ms)[0m  [1mTRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:15:23 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 66ms (Views: 57.2ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2014-06-28 13:15:24 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2014-06-28 13:15:24 -0400
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:15:24 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (2.4ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'app_test'[0m
+  [1m[35m (8.2ms)[0m  TRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:15:24 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:15:24 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:15:24 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.7ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (2.3ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'app_test'[0m
+  [1m[35m (6.4ms)[0m  TRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:15:27 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (6.5ms)[0m  [1mTRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:15:27 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:15:27 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:15:27 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (6.7ms)[0m  TRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:42:24 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (46.6ms)
+Completed 200 OK in 82ms (Views: 72.0ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2014-06-28 13:42:24 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2014-06-28 13:42:24 -0400
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:42:25 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+Started GET "/signup" for 127.0.0.1 at 2014-06-28 13:42:25 -0400
+Processing by SearchesController#signup as JS
+  Rendered searches/_signup.html.erb (0.8ms)
+Completed 500 Internal Server Error in 8ms
+  [1m[35m (0.5ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (1.8ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'app_test'[0m
+  [1m[35m (7.3ms)[0m  TRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:42:27 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:42:27 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2014-06-28 13:42:28 -0400
+Processing by SearchesController#login as JS
+  Rendered searches/_login.html.erb (0.6ms)
+Completed 500 Internal Server Error in 4ms
+  [1m[35m (0.7ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (2.6ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'app_test'[0m
+  [1m[35m (7.2ms)[0m  TRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:42:30 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.js" for 127.0.0.1 at 2014-06-28 13:42:30 -0400
+  [1m[35m (0.6ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (7.6ms)[0m  [1mTRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:42:30 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.js" for 127.0.0.1 at 2014-06-28 13:42:30 -0400
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:42:30 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.js" for 127.0.0.1 at 2014-06-28 13:42:30 -0400
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.8ms)[0m  select table_name from information_schema.views where table_schema = 'app_test'
+  [1m[36m (7.1ms)[0m  [1mTRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (1.8ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'app_test'[0m
+  [1m[35m (6.7ms)[0m  TRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+Processing by SearchesController#show as HTML
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (7.4ms)[0m  [1mTRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (1.9ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'app_test'[0m
+  [1m[35m (7.9ms)[0m  TRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+Processing by SearchesController#show as HTML
+Completed 200 OK in 1ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (6.5ms)[0m  [1mTRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+Processing by SearchesController#signup as HTML
+  Rendered searches/_signup.html.erb (0.3ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (6.2ms)[0m  TRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;
+  [1m[36m (1.8ms)[0m  [1mALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+Processing by SearchesController#login as HTML
+  Rendered searches/_login.html.erb (0.4ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (2.9ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (10.1ms)[0m  [1mTRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (4.4ms)[0m  ALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2014-06-28 14:05:59 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (40.1ms)
+Completed 200 OK in 79ms (Views: 69.4ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2014-06-28 14:05:59 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2014-06-28 14:05:59 -0400
+  [1m[35m (0.5ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (1.8ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'app_test'[0m
+  [1m[35m (7.3ms)[0m  TRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2014-06-28 14:05:59 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 14:06:00 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.7ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (3.8ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'app_test'[0m
+  [1m[35m (6.6ms)[0m  TRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2014-06-28 14:06:00 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 14:06:00 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2014-06-28 14:06:00 -0400
+Processing by SearchesController#login as JS
+  Rendered searches/_login.html.erb (1.6ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.7ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (2.4ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'app_test'[0m
+  [1m[35m (7.1ms)[0m  TRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2014-06-28 14:06:00 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 14:06:01 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+Started GET "/signup" for 127.0.0.1 at 2014-06-28 14:06:01 -0400
+Processing by SearchesController#signup as JS
+  Rendered searches/_signup.html.erb (1.2ms)
+Completed 200 OK in 4ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (6.0ms)[0m  [1mTRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2014-06-28 14:06:23 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (43.7ms)
+Completed 200 OK in 72ms (Views: 60.7ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application.css" for 127.0.0.1 at 2014-06-28 14:06:23 -0400
+Started GET "/assets/application.js" for 127.0.0.1 at 2014-06-28 14:06:23 -0400
+Started POST "/" for 127.0.0.1 at 2014-06-28 14:06:23 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started GET "/signup" for 127.0.0.1 at 2014-06-28 14:06:23 -0400
+Processing by SearchesController#signup as JS
+  Rendered searches/_signup.html.erb (1.5ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (1.8ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'app_test'[0m
+  [1m[35m (6.7ms)[0m  TRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2014-06-28 14:06:23 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 14:06:24 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2014-06-28 14:06:24 -0400
+Processing by SearchesController#login as JS
+  Rendered searches/_login.html.erb (1.3ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.0ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (2.4ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'app_test'[0m
+  [1m[35m (6.4ms)[0m  TRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+Started GET "/" for 127.0.0.1 at 2014-06-28 14:06:24 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 14:06:24 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  ALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (7.2ms)[0m  [1mTRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+Started GET "/" for 127.0.0.1 at 2014-06-28 14:06:24 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "rides" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "stations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.6ms)[0m  select table_name from information_schema.views where table_schema = 'app_test'
+  [1m[36m (7.2ms)[0m  [1mTRUNCATE TABLE "rides", "stations", "users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "rides" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "stations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
