@@ -15,6 +15,7 @@ feature 'Searches', :js => true do
     fill_in 'Destination', with: '30 Rockefeller Plaza'
     click_button 'Ride!'
     expect(current_path).to eq search_path
+    expect(page).to have_css "#map"
     expect(page).to have_content "Log in to save your ride?"
     expect(page).to have_content "...or sign up here."
   end
