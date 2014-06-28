@@ -1674,3 +1674,44 @@ Processing by SearchesController#index as HTML
   Rendered searches/index.html.erb within layouts/application (0.7ms)
 Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
   [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:06:51 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 24ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:06:51 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:06:51 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:06:51 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:06:51 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-06-28 13:06:51 -0400
+Processing by SearchesController#show as HTML
+  Parameters: {"utf8"=>"✓", "s"=>"48 Wall Street", "d"=>"30 Rockefeller Plaza", "commit"=>"Ride!"}
+  Rendered searches/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-06-28 13:06:51 -0400
+Processing by SearchesController#index as HTML
+  Rendered searches/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
