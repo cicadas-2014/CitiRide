@@ -2212,3 +2212,1116 @@ RuntimeError (Circular dependency detected while autoloading constant SeedHelper
   Rendered /Users/ken/.rvm/gems/ruby-2.0.0-p451/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
   Rendered /Users/ken/.rvm/gems/ruby-2.0.0-p451/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
   Rendered /Users/ken/.rvm/gems/ruby-2.0.0-p451/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.3ms)
+  [1m[36mSQL (1.0ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (5.9ms)[0m  CREATE TABLE "rides" ("id" serial primary key, "starting_point" character varying(255), "destination" character varying(255), "user_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "stations" ("id" serial primary key, "name" character varying(255), "latitude" float, "longitude" float, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.8ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying(255), "username" character varying(255), "password_digest" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.6ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140627150928')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140626214958')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140626215012')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.001745"], ["latitude", 40.76727216], ["longitude", -73.99392888], ["name", "W 52 St & 11 Ave"], ["updated_at", "2014-06-28 15:57:26.001745"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.007733"], ["latitude", 40.71911552], ["longitude", -74.00666661], ["name", "Franklin St & W Broadway"], ["updated_at", "2014-06-28 15:57:26.007733"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.009340"], ["latitude", 40.71117416], ["longitude", -74.00016545], ["name", "St James Pl & Pearl St"], ["updated_at", "2014-06-28 15:57:26.009340"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.010742"], ["latitude", 40.68382604], ["longitude", -73.97632328], ["name", "Atlantic Ave & Fort Greene Pl"], ["updated_at", "2014-06-28 15:57:26.010742"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.012077"], ["latitude", 40.74177603], ["longitude", -74.00149746], ["name", "W 17 St & 8 Ave"], ["updated_at", "2014-06-28 15:57:26.012077"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.013426"], ["latitude", 40.69608941], ["longitude", -73.97803415], ["name", "Park Ave & St Edwards St"], ["updated_at", "2014-06-28 15:57:26.013426"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.014912"], ["latitude", 40.68676793], ["longitude", -73.95928168], ["name", "Lexington Ave & Classon Ave"], ["updated_at", "2014-06-28 15:57:26.014912"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.016199"], ["latitude", 40.73172428], ["longitude", -74.00674436], ["name", "Barrow St & Hudson St"], ["updated_at", "2014-06-28 15:57:26.016199"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.017320"], ["latitude", 40.72710258], ["longitude", -74.00297088], ["name", "MacDougal St & Prince St"], ["updated_at", "2014-06-28 15:57:26.017320"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.018641"], ["latitude", 40.761628], ["longitude", -73.972924], ["name", "E 56 St & Madison Ave"], ["updated_at", "2014-06-28 15:57:26.018641"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.019850"], ["latitude", 40.69239502], ["longitude", -73.99337909], ["name", "Clinton St & Joralemon St"], ["updated_at", "2014-06-28 15:57:26.019850"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.020981"], ["latitude", 40.69839895], ["longitude", -73.98068914], ["name", "Nassau St & Navy St"], ["updated_at", "2014-06-28 15:57:26.020981"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.022116"], ["latitude", 40.71625008], ["longitude", -74.0091059], ["name", "Hudson St & Reade St"], ["updated_at", "2014-06-28 15:57:26.022116"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.023235"], ["latitude", 40.71542197], ["longitude", -74.01121978], ["name", "Greenwich St & Warren St"], ["updated_at", "2014-06-28 15:57:26.023235"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.024357"], ["latitude", 40.7208736], ["longitude", -73.98085795], ["name", "E 2 St & Avenue C"], ["updated_at", "2014-06-28 15:57:26.024357"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.025515"], ["latitude", 40.7218158], ["longitude", -73.99720307], ["name", "Cleveland Pl & Spring St"], ["updated_at", "2014-06-28 15:57:26.025515"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.026853"], ["latitude", 40.71473993], ["longitude", -74.00910627], ["name", "Warren St & Church St"], ["updated_at", "2014-06-28 15:57:26.026853"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.028053"], ["latitude", 40.752062307], ["longitude", -73.9816324043], ["name", "E 40 St & 5 Ave"], ["updated_at", "2014-06-28 15:57:26.028053"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.029210"], ["latitude", 40.69089272], ["longitude", -73.99612349], ["name", "Henry St & Atlantic Ave"], ["updated_at", "2014-06-28 15:57:26.029210"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.030513"], ["latitude", 40.748238], ["longitude", -73.978311], ["name", "E 37 St & Lexington Ave"], ["updated_at", "2014-06-28 15:57:26.030513"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.031837"], ["latitude", 40.72917025], ["longitude", -73.99810231], ["name", "LaGuardia Pl & W 3 St"], ["updated_at", "2014-06-28 15:57:26.031837"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.033063"], ["latitude", 40.75323098], ["longitude", -73.97032517], ["name", "E 47 St & 2 Ave"], ["updated_at", "2014-06-28 15:57:26.033063"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.034260"], ["latitude", 40.7489006], ["longitude", -73.97604882], ["name", "E 39 St & 3 Ave"], ["updated_at", "2014-06-28 15:57:26.034260"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.035614"], ["latitude", 40.73971301], ["longitude", -73.99456405], ["name", "W 18 St & 6 Ave"], ["updated_at", "2014-06-28 15:57:26.035614"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.036896"], ["latitude", 40.76064679], ["longitude", -73.98442659], ["name", "Broadway & W 49 St"], ["updated_at", "2014-06-28 15:57:26.036896"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.038015"], ["latitude", 40.7381765], ["longitude", -73.97738662], ["name", "E 25 St & 1 Ave"], ["updated_at", "2014-06-28 15:57:26.038015"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.039130"], ["latitude", 40.70905623], ["longitude", -74.01043382], ["name", "Liberty St & Broadway"], ["updated_at", "2014-06-28 15:57:26.039130"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.040192"], ["latitude", 40.74334935], ["longitude", -74.00681753], ["name", "W 16 St & The High Line"], ["updated_at", "2014-06-28 15:57:26.040192"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.041460"], ["latitude", 40.70037867], ["longitude", -73.99548059], ["name", "Columbia Heights & Cranberry St"], ["updated_at", "2014-06-28 15:57:26.041460"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.042843"], ["latitude", 40.70277159], ["longitude", -73.99383605], ["name", "Old Fulton St"], ["updated_at", "2014-06-28 15:57:26.042843"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.044011"], ["latitude", 40.69028437], ["longitude", -73.98707105], ["name", "Gallatin Pl & Livingston St"], ["updated_at", "2014-06-28 15:57:26.044011"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.045135"], ["latitude", 40.73781509], ["longitude", -73.99994661], ["name", "W 13 St & 7 Ave"], ["updated_at", "2014-06-28 15:57:26.045135"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.046335"], ["latitude", 40.71146364], ["longitude", -74.00552427], ["name", "Spruce St & Nassau St"], ["updated_at", "2014-06-28 15:57:26.046335"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.047588"], ["latitude", 40.74195138], ["longitude", -74.00803013], ["name", "W 14 St & The High Line"], ["updated_at", "2014-06-28 15:57:26.047588"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.048752"], ["latitude", 40.7546011026], ["longitude", -73.971878855], ["name", "E 48 St & 3 Ave"], ["updated_at", "2014-06-28 15:57:26.048752"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.049998"], ["latitude", 40.72743423], ["longitude", -73.99379025], ["name", "Great Jones St"], ["updated_at", "2014-06-28 15:57:26.049998"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.051380"], ["latitude", 40.69597683], ["longitude", -73.99014892], ["name", "Cadman Plaza E & Tillary St"], ["updated_at", "2014-06-28 15:57:26.051380"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.052536"], ["latitude", 40.69246277], ["longitude", -73.98963911], ["name", "Joralemon St & Adams St"], ["updated_at", "2014-06-28 15:57:26.052536"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.053650"], ["latitude", 40.7284186], ["longitude", -73.98713956], ["name", "St Marks Pl & 2 Ave"], ["updated_at", "2014-06-28 15:57:26.053650"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.054766"], ["latitude", 40.73047309], ["longitude", -73.98672378], ["name", "E 11 St & 2 Ave"], ["updated_at", "2014-06-28 15:57:26.054766"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.055884"], ["latitude", 40.7361967], ["longitude", -74.00859207], ["name", "Bank St & Washington St"], ["updated_at", "2014-06-28 15:57:26.055884"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.057046"], ["latitude", 40.69196566], ["longitude", -73.9813018], ["name", "Willoughby St & Fleet St"], ["updated_at", "2014-06-28 15:57:26.057046"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.058356"], ["latitude", 40.68981035], ["longitude", -73.97493121], ["name", "DeKalb Ave & S Portland Ave"], ["updated_at", "2014-06-28 15:57:26.058356"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.059578"], ["latitude", 40.69788349], ["longitude", -73.97350332], ["name", "Flushing Ave & Carlton Ave"], ["updated_at", "2014-06-28 15:57:26.059578"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.060760"], ["latitude", 40.688226], ["longitude", -73.979382], ["name", "Fulton St & Rockwell Pl"], ["updated_at", "2014-06-28 15:57:26.060760"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.061895"], ["latitude", 40.69196035], ["longitude", -73.96536851], ["name", "Willoughby Ave & Hall St"], ["updated_at", "2014-06-28 15:57:26.061895"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.063005"], ["latitude", 40.69327018], ["longitude", -73.97703874], ["name", "Myrtle Ave & St Edwards St"], ["updated_at", "2014-06-28 15:57:26.063005"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.064128"], ["latitude", 40.73535398], ["longitude", -74.00483091], ["name", "Perry St & Bleecker St"], ["updated_at", "2014-06-28 15:57:26.064128"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.065285"], ["latitude", 40.72185379], ["longitude", -74.00771779], ["name", "Laight St & Hudson St"], ["updated_at", "2014-06-28 15:57:26.065285"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.066576"], ["latitude", 40.71870987], ["longitude", -74.0090009], ["name", "Harrison St & Hudson St"], ["updated_at", "2014-06-28 15:57:26.066576"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.067782"], ["latitude", 40.72456089], ["longitude", -73.99565293], ["name", "Lafayette St & Jersey St"], ["updated_at", "2014-06-28 15:57:26.067782"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.068940"], ["latitude", 40.72317958], ["longitude", -73.99480012], ["name", "Mott St & Prince St"], ["updated_at", "2014-06-28 15:57:26.068940"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.070054"], ["latitude", 40.73226398], ["longitude", -73.99852205], ["name", "MacDougal St & Washington Sq"], ["updated_at", "2014-06-28 15:57:26.070054"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.071180"], ["latitude", 40.73543934], ["longitude", -73.99453948], ["name", "W 13 St & 5 Ave"], ["updated_at", "2014-06-28 15:57:26.071180"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.072310"], ["latitude", 40.73532427], ["longitude", -73.99800419], ["name", "W 11 St & 6 Ave"], ["updated_at", "2014-06-28 15:57:26.072310"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.073461"], ["latitude", 40.71939226], ["longitude", -74.00247214], ["name", "Lispenard St & Broadway"], ["updated_at", "2014-06-28 15:57:26.073461"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.074779"], ["latitude", 40.68940747], ["longitude", -73.96885458], ["name", "DeKalb Ave & Vanderbilt Ave"], ["updated_at", "2014-06-28 15:57:26.074779"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.075964"], ["latitude", 40.70122128], ["longitude", -74.01234218], ["name", "South St & Whitehall St"], ["updated_at", "2014-06-28 15:57:26.075964"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.077099"], ["latitude", 40.70365182], ["longitude", -74.01167797], ["name", "Broad St & Bridge St"], ["updated_at", "2014-06-28 15:57:26.077099"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.078381"], ["latitude", 40.69474881], ["longitude", -73.98362464], ["name", "Johnson St & Gold St"], ["updated_at", "2014-06-28 15:57:26.078381"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.079631"], ["latitude", 40.69178232], ["longitude", -73.97372989], ["name", "Washington Park"], ["updated_at", "2014-06-28 15:57:26.079631"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.080740"], ["latitude", 40.71729], ["longitude", -73.996375], ["name", "Elizabeth St & Hester St"], ["updated_at", "2014-06-28 15:57:26.080740"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.082020"], ["latitude", 40.70706456], ["longitude", -74.00731853], ["name", "Maiden Ln & Pearl St"], ["updated_at", "2014-06-28 15:57:26.082020"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.083513"], ["latitude", 40.72229346], ["longitude", -73.99147535], ["name", "Stanton St & Chrystie St"], ["updated_at", "2014-06-28 15:57:26.083513"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.084740"], ["latitude", 40.72368361], ["longitude", -73.97574813], ["name", "Avenue D & E 8 St"], ["updated_at", "2014-06-28 15:57:26.084740"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.085851"], ["latitude", 40.75097711], ["longitude", -73.98765428], ["name", "Broadway & W 36 St"], ["updated_at", "2014-06-28 15:57:26.085851"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.086928"], ["latitude", 40.71910537], ["longitude", -73.99973337], ["name", "Howard St & Centre St"], ["updated_at", "2014-06-28 15:57:26.086928"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.088090"], ["latitude", 40.69308257], ["longitude", -73.97178913], ["name", "Adelphi St & Myrtle Ave"], ["updated_at", "2014-06-28 15:57:26.088090"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.089211"], ["latitude", 40.68528172], ["longitude", -73.97805813], ["name", "Ashland Pl & Hanson Pl"], ["updated_at", "2014-06-28 15:57:26.089211"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.090390"], ["latitude", 40.68691865], ["longitude", -73.976682], ["name", "Lafayette Ave & Fort Greene Pl"], ["updated_at", "2014-06-28 15:57:26.090390"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.091546"], ["latitude", 40.68650065], ["longitude", -73.96563307], ["name", "Washington Ave & Greene Ave"], ["updated_at", "2014-06-28 15:57:26.091546"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.092676"], ["latitude", 40.71748752], ["longitude", -74.0104554], ["name", "Duane St & Greenwich St"], ["updated_at", "2014-06-28 15:57:26.092676"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.093762"], ["latitude", 40.69766564], ["longitude", -73.98476437], ["name", "Concord St & Bridge St"], ["updated_at", "2014-06-28 15:57:26.093762"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.094934"], ["latitude", 40.69986937], ["longitude", -73.98271933], ["name", "Sands St & Gold St"], ["updated_at", "2014-06-28 15:57:26.094934"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.096151"], ["latitude", 40.73331967], ["longitude", -73.99510132], ["name", "E 10 St & 5 Ave"], ["updated_at", "2014-06-28 15:57:26.096151"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.097317"], ["latitude", 40.7643971], ["longitude", -73.97371465], ["name", "Grand Army Plaza & Central Park S"], ["updated_at", "2014-06-28 15:57:26.097317"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.098560"], ["latitude", 40.70827295], ["longitude", -73.96834101], ["name", "Kent Ave & S 11 St"], ["updated_at", "2014-06-28 15:57:26.098560"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.099815"], ["latitude", 40.7390169121], ["longitude", -74.0026376103], ["name", "Greenwich Ave & 8 Ave"], ["updated_at", "2014-06-28 15:57:26.099815"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.100942"], ["latitude", 40.73454567], ["longitude", -73.99074142], ["name", "Broadway & E 14 St"], ["updated_at", "2014-06-28 15:57:26.100942"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.102042"], ["latitude", 40.6845683], ["longitude", -73.95881081], ["name", "Monroe St & Classon Ave"], ["updated_at", "2014-06-28 15:57:26.102042"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.103144"], ["latitude", 40.76020258], ["longitude", -73.96478473], ["name", "2 Ave & E 58 St"], ["updated_at", "2014-06-28 15:57:26.103144"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.104265"], ["latitude", 40.713126], ["longitude", -73.984844], ["name", "Madison St & Montgomery St"], ["updated_at", "2014-06-28 15:57:26.104265"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.105457"], ["latitude", 40.73028666], ["longitude", -73.9907647], ["name", "Lafayette St & E 8 St"], ["updated_at", "2014-06-28 15:57:26.105457"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.106660"], ["latitude", 40.73049393], ["longitude", -73.9957214], ["name", "Washington Square E"], ["updated_at", "2014-06-28 15:57:26.106660"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.108002"], ["latitude", 40.71406667], ["longitude", -73.99293911], ["name", "Pike St & E Broadway"], ["updated_at", "2014-06-28 15:57:26.108002"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.109269"], ["latitude", 40.71413089], ["longitude", -73.9970468], ["name", "Division St & Bowery"], ["updated_at", "2014-06-28 15:57:26.109269"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.110396"], ["latitude", 40.734232], ["longitude", -73.986923], ["name", "E 15 St & 3 Ave"], ["updated_at", "2014-06-28 15:57:26.110396"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.111561"], ["latitude", 40.68683208], ["longitude", -73.9796772], ["name", "3 Ave & Schermerhorn St"], ["updated_at", "2014-06-28 15:57:26.111561"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.112736"], ["latitude", 40.728145], ["longitude", -73.990214], ["name", "Shevchenko Pl & E 7 St"], ["updated_at", "2014-06-28 15:57:26.112736"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.113862"], ["latitude", 40.72217444], ["longitude", -73.98368779], ["name", "E 2 St & Avenue B"], ["updated_at", "2014-06-28 15:57:26.113862"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.115346"], ["latitude", 40.72082834], ["longitude", -73.97793172], ["name", "Avenue D & E 3 St"], ["updated_at", "2014-06-28 15:57:26.115346"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.116780"], ["latitude", 40.72362738], ["longitude", -73.99949601], ["name", "Mercer St & Spring St"], ["updated_at", "2014-06-28 15:57:26.116780"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.118380"], ["latitude", 40.70463334], ["longitude", -74.01361706], ["name", "Broadway & Battery Pl"], ["updated_at", "2014-06-28 15:57:26.118380"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.119658"], ["latitude", 40.76095756], ["longitude", -73.96724467], ["name", "E 58 St & 3 Ave"], ["updated_at", "2014-06-28 15:57:26.119658"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.120861"], ["latitude", 40.70823502], ["longitude", -74.00530063], ["name", "Cliff St & Fulton St"], ["updated_at", "2014-06-28 15:57:26.120861"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.122158"], ["latitude", 40.71427487], ["longitude", -73.98990025], ["name", "Canal St & Rutgers St"], ["updated_at", "2014-06-28 15:57:26.122158"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.123377"], ["latitude", 40.71307916], ["longitude", -73.99851193], ["name", "St James Pl & Oliver St"], ["updated_at", "2014-06-28 15:57:26.123377"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.124590"], ["latitude", 40.7149787], ["longitude", -74.013012], ["name", "Murray St & West St"], ["updated_at", "2014-06-28 15:57:26.124590"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.125836"], ["latitude", 40.68926942], ["longitude", -73.98912867], ["name", "State St & Smith St"], ["updated_at", "2014-06-28 15:57:26.125836"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.126965"], ["latitude", 40.7172274], ["longitude", -73.98802084], ["name", "Norfolk St & Broome St"], ["updated_at", "2014-06-28 15:57:26.126965"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.128087"], ["latitude", 40.722055], ["longitude", -73.989111], ["name", "Allen St & E Houston St"], ["updated_at", "2014-06-28 15:57:26.128087"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.129482"], ["latitude", 40.69610226], ["longitude", -73.96751037], ["name", "Washington Ave & Park Ave"], ["updated_at", "2014-06-28 15:57:26.129482"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.130692"], ["latitude", 40.69383], ["longitude", -73.990539], ["name", "Cadman Plaza West & Montague St"], ["updated_at", "2014-06-28 15:57:26.130692"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.131824"], ["latitude", 40.70355377], ["longitude", -74.00670227], ["name", "South St & Gouverneur Ln"], ["updated_at", "2014-06-28 15:57:26.131824"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.133057"], ["latitude", 40.70955958], ["longitude", -74.00653609], ["name", "Fulton St & William St"], ["updated_at", "2014-06-28 15:57:26.133057"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.134341"], ["latitude", 40.72453734], ["longitude", -73.98185424], ["name", "E 6 St & Avenue B"], ["updated_at", "2014-06-28 15:57:26.134341"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.135662"], ["latitude", 40.75320159], ["longitude", -73.9779874], ["name", "E 43 St & Vanderbilt Ave"], ["updated_at", "2014-06-28 15:57:26.135662"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.136793"], ["latitude", 40.71336124], ["longitude", -74.00937622], ["name", "Park Pl & Church St"], ["updated_at", "2014-06-28 15:57:26.136793"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.137932"], ["latitude", 40.717571], ["longitude", -74.005549], ["name", "Leonard St & Church St"], ["updated_at", "2014-06-28 15:57:26.137932"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.139118"], ["latitude", 40.69991755], ["longitude", -73.98971773], ["name", "Cadman Plaza E & Red Cross Pl"], ["updated_at", "2014-06-28 15:57:26.139118"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.140356"], ["latitude", 40.696192], ["longitude", -73.991218], ["name", "Clinton St & Tillary St"], ["updated_at", "2014-06-28 15:57:26.140356"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.141664"], ["latitude", 40.69236178], ["longitude", -73.98631746], ["name", "Lawrence St & Willoughby St"], ["updated_at", "2014-06-28 15:57:26.141664"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.142853"], ["latitude", 40.689888], ["longitude", -73.981013], ["name", "DeKalb Ave & Hudson Ave"], ["updated_at", "2014-06-28 15:57:26.142853"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.143984"], ["latitude", 40.73624527], ["longitude", -73.98473765], ["name", "E 19 St & 3 Ave"], ["updated_at", "2014-06-28 15:57:26.143984"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.145111"], ["latitude", 40.72953837], ["longitude", -73.98426726], ["name", "E 11 St & 1 Ave"], ["updated_at", "2014-06-28 15:57:26.145111"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.146269"], ["latitude", 40.7153379], ["longitude", -74.01658354], ["name", "Vesey Pl & River Terrace"], ["updated_at", "2014-06-28 15:57:26.146269"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.147457"], ["latitude", 40.72405549], ["longitude", -74.00965965], ["name", "Watts St & Greenwich St"], ["updated_at", "2014-06-28 15:57:26.147457"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.148765"], ["latitude", 40.72043411], ["longitude", -74.01020609], ["name", "Greenwich St & N Moore St"], ["updated_at", "2014-06-28 15:57:26.148765"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.150056"], ["latitude", 40.71450451], ["longitude", -74.00562789], ["name", "Reade St & Broadway"], ["updated_at", "2014-06-28 15:57:26.150056"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.151189"], ["latitude", 40.71173107], ["longitude", -73.99193043], ["name", "Pike St & Monroe St"], ["updated_at", "2014-06-28 15:57:26.151189"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.152289"], ["latitude", 40.71219906], ["longitude", -73.97948148], ["name", "Cherry St"], ["updated_at", "2014-06-28 15:57:26.152289"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.153471"], ["latitude", 40.74238787], ["longitude", -73.99726235], ["name", "W 20 St & 7 Ave"], ["updated_at", "2014-06-28 15:57:26.153471"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.154725"], ["latitude", 40.72903917], ["longitude", -73.99404649], ["name", "Washington Pl & Broadway"], ["updated_at", "2014-06-28 15:57:26.154725"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.155922"], ["latitude", 40.73047747], ["longitude", -73.99906065], ["name", "Sullivan St & Washington Sq"], ["updated_at", "2014-06-28 15:57:26.155922"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.157277"], ["latitude", 40.7037992], ["longitude", -74.00838676], ["name", "Old Slip & Front St"], ["updated_at", "2014-06-28 15:57:26.157277"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.158423"], ["latitude", 40.72580614], ["longitude", -73.97422494], ["name", "Avenue D & E 12 St"], ["updated_at", "2014-06-28 15:57:26.158423"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.159557"], ["latitude", 40.71269042], ["longitude", -73.98776323], ["name", "Madison St & Clinton St"], ["updated_at", "2014-06-28 15:57:26.159557"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.160778"], ["latitude", 40.71782143], ["longitude", -73.97628939], ["name", "Stanton St & Mangin St"], ["updated_at", "2014-06-28 15:57:26.160778"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.161923"], ["latitude", 40.71739973], ["longitude", -73.98016555], ["name", "Columbia St & Rivington St"], ["updated_at", "2014-06-28 15:57:26.161923"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.163064"], ["latitude", 40.69794], ["longitude", -73.96986848], ["name", "Clinton Ave & Flushing Ave"], ["updated_at", "2014-06-28 15:57:26.163064"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.164390"], ["latitude", 40.6851443], ["longitude", -73.95380904], ["name", "Monroe St & Bedford Ave"], ["updated_at", "2014-06-28 15:57:26.164390"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.165625"], ["latitude", 40.73649403], ["longitude", -73.99704374], ["name", "W 13 St & 6 Ave"], ["updated_at", "2014-06-28 15:57:26.165625"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.166785"], ["latitude", 40.73652889], ["longitude", -74.00618026], ["name", "Bank St & Hudson St"], ["updated_at", "2014-06-28 15:57:26.166785"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.168050"], ["latitude", 40.72873888], ["longitude", -74.00748842], ["name", "W Houston St & Hudson St"], ["updated_at", "2014-06-28 15:57:26.168050"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.169231"], ["latitude", 40.72490985], ["longitude", -74.00154702], ["name", "W Broadway & Spring St"], ["updated_at", "2014-06-28 15:57:26.169231"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.170594"], ["latitude", 40.71850211], ["longitude", -73.98329859], ["name", "Rivington St & Ridge St"], ["updated_at", "2014-06-28 15:57:26.170594"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.171814"], ["latitude", 40.71559509], ["longitude", -73.9870295], ["name", "Clinton St & Grand St"], ["updated_at", "2014-06-28 15:57:26.171814"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.172956"], ["latitude", 40.70530954], ["longitude", -74.00612572], ["name", "Front St & Maiden Ln"], ["updated_at", "2014-06-28 15:57:26.172956"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.174076"], ["latitude", 40.76340613], ["longitude", -73.97722479], ["name", "W 56 St & 6 Ave"], ["updated_at", "2014-06-28 15:57:26.174076"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.175390"], ["latitude", 40.68539567], ["longitude", -73.97431458], ["name", "S Portland Ave & Hanson Pl"], ["updated_at", "2014-06-28 15:57:26.175390"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.176668"], ["latitude", 40.69363137], ["longitude", -73.96223558], ["name", "Emerson Pl & Myrtle Ave"], ["updated_at", "2014-06-28 15:57:26.176668"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.177803"], ["latitude", 40.71602118], ["longitude", -73.99974372], ["name", "Bayard St & Baxter St"], ["updated_at", "2014-06-28 15:57:26.177803"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.178943"], ["latitude", 40.71622644], ["longitude", -73.98261206], ["name", "Bialystoker Pl & Delancey St"], ["updated_at", "2014-06-28 15:57:26.178943"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.180194"], ["latitude", 40.73261787], ["longitude", -73.99158043], ["name", "E 11 St & Broadway"], ["updated_at", "2014-06-28 15:57:26.180194"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.181377"], ["latitude", 40.73291553], ["longitude", -74.00711384], ["name", "Christopher St & Greenwich St"], ["updated_at", "2014-06-28 15:57:26.181377"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.182726"], ["latitude", 40.75510267], ["longitude", -73.97498696], ["name", "E 47 St & Park Ave"], ["updated_at", "2014-06-28 15:57:26.182726"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.183983"], ["latitude", 40.70717936], ["longitude", -74.00887308], ["name", "William St & Pine St"], ["updated_at", "2014-06-28 15:57:26.183983"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.185116"], ["latitude", 40.71605866], ["longitude", -73.99190759], ["name", "Allen St & Hester St"], ["updated_at", "2014-06-28 15:57:26.185116"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.186291"], ["latitude", 40.75172632], ["longitude", -73.98753523], ["name", "Broadway & W 37 St"], ["updated_at", "2014-06-28 15:57:26.186291"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.213099"], ["latitude", 40.70834698], ["longitude", -74.01713445], ["name", "West Thames St"], ["updated_at", "2014-06-28 15:57:26.213099"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.214438"], ["latitude", 40.68900443], ["longitude", -73.96023854], ["name", "Lafayette Ave & Classon Ave"], ["updated_at", "2014-06-28 15:57:26.214438"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.215621"], ["latitude", 40.68223166], ["longitude", -73.9614583], ["name", "Fulton St & Grand Ave"], ["updated_at", "2014-06-28 15:57:26.215621"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.216799"], ["latitude", 40.693261], ["longitude", -73.968896], ["name", "Clinton Ave & Myrtle Ave"], ["updated_at", "2014-06-28 15:57:26.216799"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.218289"], ["latitude", 40.75828065], ["longitude", -73.97069431], ["name", "E 53 St & Lexington Ave"], ["updated_at", "2014-06-28 15:57:26.218289"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.219942"], ["latitude", 40.73038599], ["longitude", -74.00214988], ["name", "Carmine St & 6 Ave"], ["updated_at", "2014-06-28 15:57:26.219942"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.221298"], ["latitude", 40.73224119], ["longitude", -74.00026394], ["name", "Washington Pl & 6 Ave"], ["updated_at", "2014-06-28 15:57:26.221298"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.222446"], ["latitude", 40.694528], ["longitude", -73.958089], ["name", "Franklin Ave & Myrtle Ave"], ["updated_at", "2014-06-28 15:57:26.222446"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.223570"], ["latitude", 40.69331716], ["longitude", -73.95381995], ["name", "Willoughby Ave & Walworth St"], ["updated_at", "2014-06-28 15:57:26.223570"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.224722"], ["latitude", 40.72679454], ["longitude", -73.99695094], ["name", "Mercer St & Bleecker St"], ["updated_at", "2014-06-28 15:57:26.224722"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.225856"], ["latitude", 40.70862144], ["longitude", -74.00722156], ["name", "John St & William St"], ["updated_at", "2014-06-28 15:57:26.225856"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.227029"], ["latitude", 40.72243797], ["longitude", -74.00566443], ["name", "6 Ave & Canal St"], ["updated_at", "2014-06-28 15:57:26.227029"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.228408"], ["latitude", 40.749156], ["longitude", -73.9916], ["name", "W 31 St & 7 Ave"], ["updated_at", "2014-06-28 15:57:26.228408"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.229673"], ["latitude", 40.73401143], ["longitude", -74.00293877], ["name", "W 4 St & 7 Ave S"], ["updated_at", "2014-06-28 15:57:26.229673"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.230827"], ["latitude", 40.73492695], ["longitude", -73.99200509], ["name", "University Pl & E 14 St"], ["updated_at", "2014-06-28 15:57:26.230827"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.232094"], ["latitude", 40.735238], ["longitude", -74.000271], ["name", "Greenwich Ave & Charles St"], ["updated_at", "2014-06-28 15:57:26.232094"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.233424"], ["latitude", 40.68317813], ["longitude", -73.9659641], ["name", "Fulton St & Waverly Ave"], ["updated_at", "2014-06-28 15:57:26.233424"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.234551"], ["latitude", 40.75797322], ["longitude", -73.96603308], ["name", "E 55 St & 2 Ave"], ["updated_at", "2014-06-28 15:57:26.234551"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.235755"], ["latitude", 40.71494807], ["longitude", -74.00234482], ["name", "Centre St & Worth St"], ["updated_at", "2014-06-28 15:57:26.235755"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.237019"], ["latitude", 40.71273266], ["longitude", -74.0046073], ["name", "Centre St & Chambers St"], ["updated_at", "2014-06-28 15:57:26.237019"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.238345"], ["latitude", 40.749717753], ["longitude", -74.002950346], ["name", "W 26 St & 10 Ave"], ["updated_at", "2014-06-28 15:57:26.238345"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.239626"], ["latitude", 40.71044554], ["longitude", -73.96525063], ["name", "Broadway & Berry St"], ["updated_at", "2014-06-28 15:57:26.239626"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.240690"], ["latitude", 40.69221589], ["longitude", -73.9842844], ["name", "Duffield St & Willoughby St"], ["updated_at", "2014-06-28 15:57:26.240690"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.241927"], ["latitude", 40.69760127], ["longitude", -73.99344559], ["name", "Clark St & Henry St"], ["updated_at", "2014-06-28 15:57:26.241927"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.243252"], ["latitude", 40.695065], ["longitude", -73.987167], ["name", "Jay St & Tech Pl"], ["updated_at", "2014-06-28 15:57:26.243252"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.244614"], ["latitude", 40.72299208], ["longitude", -73.97995466], ["name", "E 5 St & Avenue C"], ["updated_at", "2014-06-28 15:57:26.244614"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.245777"], ["latitude", 40.72521311], ["longitude", -73.97768752], ["name", "E 9 St & Avenue C"], ["updated_at", "2014-06-28 15:57:26.245777"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.246924"], ["latitude", 40.68807003], ["longitude", -73.98410637], ["name", "Bond St & Schermerhorn St"], ["updated_at", "2014-06-28 15:57:26.246924"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.248068"], ["latitude", 40.680342423], ["longitude", -73.9557689392], ["name", "Lefferts Pl & Franklin Ave"], ["updated_at", "2014-06-28 15:57:26.248068"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.249226"], ["latitude", 40.68415748], ["longitude", -73.96922273], ["name", "Fulton St & Clermont Ave"], ["updated_at", "2014-06-28 15:57:26.249226"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.250501"], ["latitude", 40.69165183], ["longitude", -73.9999786], ["name", "Atlantic Ave & Furman St"], ["updated_at", "2014-06-28 15:57:26.250501"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.251850"], ["latitude", 40.68851534], ["longitude", -73.9647628], ["name", "Lafayette Ave & St James Pl"], ["updated_at", "2014-06-28 15:57:26.251850"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.253143"], ["latitude", 40.71926081], ["longitude", -73.98178024], ["name", "Pitt St & Stanton St"], ["updated_at", "2014-06-28 15:57:26.253143"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.254276"], ["latitude", 40.72019576], ["longitude", -73.98997825], ["name", "Allen St & Rivington St"], ["updated_at", "2014-06-28 15:57:26.254276"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.255495"], ["latitude", 40.7403432], ["longitude", -73.98955109], ["name", "Broadway & E 22 St"], ["updated_at", "2014-06-28 15:57:26.255495"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.256664"], ["latitude", 40.72502876], ["longitude", -73.99069656], ["name", "E 2 St & 2 Ave"], ["updated_at", "2014-06-28 15:57:26.256664"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.257994"], ["latitude", 40.7405826], ["longitude", -74.00550867], ["name", "9 Ave & W 14 St"], ["updated_at", "2014-06-28 15:57:26.257994"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.259204"], ["latitude", 40.739323], ["longitude", -74.008119], ["name", "Washington St & Gansevoort St"], ["updated_at", "2014-06-28 15:57:26.259204"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.260352"], ["latitude", 40.69512845], ["longitude", -73.99595065], ["name", "Hicks St & Montague St"], ["updated_at", "2014-06-28 15:57:26.260352"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.261637"], ["latitude", 40.700469], ["longitude", -73.991454], ["name", "Henry St & Poplar St"], ["updated_at", "2014-06-28 15:57:26.261637"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.262854"], ["latitude", 40.71076228], ["longitude", -73.99400398], ["name", "Market St & Cherry St"], ["updated_at", "2014-06-28 15:57:26.262854"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.264138"], ["latitude", 40.6906495], ["longitude", -73.95643107], ["name", "DeKalb Ave & Skillman St"], ["updated_at", "2014-06-28 15:57:26.264138"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.265340"], ["latitude", 40.72066442], ["longitude", -73.98517977], ["name", "Suffolk St & Stanton St"], ["updated_at", "2014-06-28 15:57:26.265340"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.266459"], ["latitude", 40.72228087], ["longitude", -73.97668709], ["name", "E 6 St & Avenue D"], ["updated_at", "2014-06-28 15:57:26.266459"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.267600"], ["latitude", 40.7158155], ["longitude", -73.99422366], ["name", "Forsyth St & Canal St"], ["updated_at", "2014-06-28 15:57:26.267600"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.268786"], ["latitude", 40.70281858], ["longitude", -73.98765762], ["name", "Pearl St & Anchorage Pl"], ["updated_at", "2014-06-28 15:57:26.268786"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.270011"], ["latitude", 40.7047177], ["longitude", -74.00926027], ["name", "Pearl St & Hanover Square"], ["updated_at", "2014-06-28 15:57:26.270011"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.271239"], ["latitude", 40.68753406], ["longitude", -73.97265183], ["name", "Cumberland St & Lafayette Ave"], ["updated_at", "2014-06-28 15:57:26.271239"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.272418"], ["latitude", 40.71291224], ["longitude", -74.01020234], ["name", "Barclay St & Church St"], ["updated_at", "2014-06-28 15:57:26.272418"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.273616"], ["latitude", 40.70224], ["longitude", -73.982578], ["name", "Front St & Gold St"], ["updated_at", "2014-06-28 15:57:26.273616"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.274915"], ["latitude", 40.69580705], ["longitude", -73.97355569], ["name", "Carlton Ave & Park Ave"], ["updated_at", "2014-06-28 15:57:26.274915"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.276210"], ["latitude", 40.68764484], ["longitude", -73.96968902], ["name", "Clermont Ave & Lafayette Ave"], ["updated_at", "2014-06-28 15:57:26.276210"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.277484"], ["latitude", 40.69573398], ["longitude", -73.97129668], ["name", "Clermont Ave & Park Ave"], ["updated_at", "2014-06-28 15:57:26.277484"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.278639"], ["latitude", 40.770513], ["longitude", -73.988038], ["name", "W 59 St & 10 Ave"], ["updated_at", "2014-06-28 15:57:26.278639"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.279793"], ["latitude", 40.76584941], ["longitude", -73.98690506], ["name", "W 54 St & 9 Ave"], ["updated_at", "2014-06-28 15:57:26.279793"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.281091"], ["latitude", 40.71754834], ["longitude", -74.01322069], ["name", "West St & Chambers St"], ["updated_at", "2014-06-28 15:57:26.281091"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.282411"], ["latitude", 40.701907], ["longitude", -74.013942], ["name", "Bus Slip & State St"], ["updated_at", "2014-06-28 15:57:26.282411"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.283533"], ["latitude", 40.72467721], ["longitude", -73.98783413], ["name", "E 3 St & 1 Ave"], ["updated_at", "2014-06-28 15:57:26.283533"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.284713"], ["latitude", 40.7014851], ["longitude", -73.98656928], ["name", "York St & Jay St"], ["updated_at", "2014-06-28 15:57:26.284713"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.285892"], ["latitude", 40.68864636], ["longitude", -73.98263429], ["name", "Hanover Pl & Livingston St"], ["updated_at", "2014-06-28 15:57:26.285892"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.286999"], ["latitude", 40.72621788], ["longitude", -73.98379855], ["name", "E 7 St & Avenue A"], ["updated_at", "2014-06-28 15:57:26.286999"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.288323"], ["latitude", 40.72955361], ["longitude", -73.98057249], ["name", "E 13 St & Avenue A"], ["updated_at", "2014-06-28 15:57:26.288323"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.289575"], ["latitude", 40.74317449], ["longitude", -74.00366443], ["name", "9 Ave & W 18 St"], ["updated_at", "2014-06-28 15:57:26.289575"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.290819"], ["latitude", 40.74173969], ["longitude", -73.99415556], ["name", "W 21 St & 6 Ave"], ["updated_at", "2014-06-28 15:57:26.290819"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.291969"], ["latitude", 40.68216564], ["longitude", -73.95399026], ["name", "Hancock St & Bedford Ave"], ["updated_at", "2014-06-28 15:57:26.291969"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.293238"], ["latitude", 40.6809833854], ["longitude", -73.9500479759], ["name", "Macon St & Nostrand Ave"], ["updated_at", "2014-06-28 15:57:26.293238"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.294552"], ["latitude", 40.72779126], ["longitude", -73.98564945], ["name", "St Marks Pl & 1 Ave"], ["updated_at", "2014-06-28 15:57:26.294552"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.295892"], ["latitude", 40.7262807], ["longitude", -73.98978041], ["name", "E 4 St & 2 Ave"], ["updated_at", "2014-06-28 15:57:26.295892"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.297053"], ["latitude", 40.75255434], ["longitude", -73.97282625], ["name", "E 45 St & 3 Ave"], ["updated_at", "2014-06-28 15:57:26.297053"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.298209"], ["latitude", 40.756014], ["longitude", -73.967416], ["name", "E 52 St & 2 Ave"], ["updated_at", "2014-06-28 15:57:26.298209"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.299341"], ["latitude", 40.746647], ["longitude", -73.993915], ["name", "W 27 St & 7 Ave"], ["updated_at", "2014-06-28 15:57:26.299341"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.300812"], ["latitude", 40.70853074], ["longitude", -73.96408963], ["name", "Bedford Ave & S 9th St"], ["updated_at", "2014-06-28 15:57:26.300812"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.302493"], ["latitude", 40.7423543], ["longitude", -73.98915076], ["name", "Broadway & W 24 St"], ["updated_at", "2014-06-28 15:57:26.302493"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.303804"], ["latitude", 40.72740794], ["longitude", -73.98142006], ["name", "E 10 St & Avenue A"], ["updated_at", "2014-06-28 15:57:26.303804"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.304925"], ["latitude", 40.74487634], ["longitude", -73.99529885], ["name", "W 24 St & 7 Ave"], ["updated_at", "2014-06-28 15:57:26.304925"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.306068"], ["latitude", 40.76370739], ["longitude", -73.9851615], ["name", "8 Ave & W 52 St"], ["updated_at", "2014-06-28 15:57:26.306068"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.307231"], ["latitude", 40.75660359], ["longitude", -73.9979009], ["name", "W 37 St & 10 Ave"], ["updated_at", "2014-06-28 15:57:26.307231"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.308373"], ["latitude", 40.76461837], ["longitude", -73.98789473], ["name", "W 52 St & 9 Ave"], ["updated_at", "2014-06-28 15:57:26.308373"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.309533"], ["latitude", 40.76227205], ["longitude", -73.98788205], ["name", "W 49 St & 8 Ave"], ["updated_at", "2014-06-28 15:57:26.309533"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.310856"], ["latitude", 40.74475148], ["longitude", -73.99915362], ["name", "W 22 St & 8 Ave"], ["updated_at", "2014-06-28 15:57:26.310856"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.312060"], ["latitude", 40.75455731], ["longitude", -73.96592976], ["name", "E 51 St & 1 Ave"], ["updated_at", "2014-06-28 15:57:26.312060"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.313214"], ["latitude", 40.75001986], ["longitude", -73.96905301], ["name", "1 Ave & E 44 St"], ["updated_at", "2014-06-28 15:57:26.313214"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.349126"], ["latitude", 40.7597108], ["longitude", -73.97402311], ["name", "E 53 St & Madison Ave"], ["updated_at", "2014-06-28 15:57:26.349126"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.350575"], ["latitude", 40.76695317], ["longitude", -73.98169333], ["name", "Broadway & W 58 St"], ["updated_at", "2014-06-28 15:57:26.350575"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.351791"], ["latitude", 40.751396], ["longitude", -74.005226], ["name", "11 Ave & W 27 St"], ["updated_at", "2014-06-28 15:57:26.351791"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.352929"], ["latitude", 40.746745], ["longitude", -74.007756], ["name", "W 20 St & 11 Ave"], ["updated_at", "2014-06-28 15:57:26.352929"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.354074"], ["latitude", 40.71285887], ["longitude", -73.96590294], ["name", "S 4 St & Wythe Ave"], ["updated_at", "2014-06-28 15:57:26.354074"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.355213"], ["latitude", 40.73587678], ["longitude", -73.98205027], ["name", "E 20 St & 2 Ave"], ["updated_at", "2014-06-28 15:57:26.355213"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.356399"], ["latitude", 40.74691959], ["longitude", -74.00451887], ["name", "W 22 St & 10 Ave"], ["updated_at", "2014-06-28 15:57:26.356399"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.357606"], ["latitude", 40.74206539], ["longitude", -74.00443172], ["name", "9 Ave & W 16 St"], ["updated_at", "2014-06-28 15:57:26.357606"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.358789"], ["latitude", 40.75934501], ["longitude", -73.96759673], ["name", "E 56 St & 3 Ave"], ["updated_at", "2014-06-28 15:57:26.358789"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.360027"], ["latitude", 40.75513557], ["longitude", -73.98658032], ["name", "Broadway & W 41 St"], ["updated_at", "2014-06-28 15:57:26.360027"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.361208"], ["latitude", 40.74395411], ["longitude", -73.99144871], ["name", "W 25 St & 6 Ave"], ["updated_at", "2014-06-28 15:57:26.361208"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.362334"], ["latitude", 40.68312489], ["longitude", -73.97895137], ["name", "Dean St & 4 Ave"], ["updated_at", "2014-06-28 15:57:26.362334"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.363456"], ["latitude", 40.7652654], ["longitude", -73.98192338], ["name", "Broadway & W 55 St"], ["updated_at", "2014-06-28 15:57:26.363456"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.364666"], ["latitude", 40.76344058], ["longitude", -73.98268129], ["name", "Broadway & W 53 St"], ["updated_at", "2014-06-28 15:57:26.364666"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.365860"], ["latitude", 40.74345335], ["longitude", -74.00004031], ["name", "W 20 St & 8 Ave"], ["updated_at", "2014-06-28 15:57:26.365860"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.366982"], ["latitude", 40.71286844], ["longitude", -73.95698119], ["name", "Grand St & Havemeyer St"], ["updated_at", "2014-06-28 15:57:26.366982"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.368178"], ["latitude", 40.7457121], ["longitude", -73.98194829], ["name", "E 32 St & Park Ave"], ["updated_at", "2014-06-28 15:57:26.368178"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.369350"], ["latitude", 40.72110063], ["longitude", -73.9919254], ["name", "Rivington St & Chrystie St"], ["updated_at", "2014-06-28 15:57:26.369350"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.370498"], ["latitude", 40.7451677], ["longitude", -73.98683077], ["name", "5 Ave & E 29 St"], ["updated_at", "2014-06-28 15:57:26.370498"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.371783"], ["latitude", 40.73524276], ["longitude", -73.98758561], ["name", "E 16 St & Irving Pl"], ["updated_at", "2014-06-28 15:57:26.371783"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.373138"], ["latitude", 40.74394314], ["longitude", -73.97966069], ["name", "E 31 St & 3 Ave"], ["updated_at", "2014-06-28 15:57:26.373138"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.374283"], ["latitude", 40.75640548], ["longitude", -73.9900262], ["name", "W 41 St & 8 Ave"], ["updated_at", "2014-06-28 15:57:26.374283"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.375399"], ["latitude", 40.76030096], ["longitude", -73.99884222], ["name", "11 Ave & W 41 St"], ["updated_at", "2014-06-28 15:57:26.375399"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.376521"], ["latitude", 40.76019252], ["longitude", -73.9912551], ["name", "9 Ave & W 45 St"], ["updated_at", "2014-06-28 15:57:26.376521"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.377707"], ["latitude", 40.76669671], ["longitude", -73.99061728], ["name", "W 53 St & 10 Ave"], ["updated_at", "2014-06-28 15:57:26.377707"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.378989"], ["latitude", 40.71260486], ["longitude", -73.96264403], ["name", "S 3 St & Bedford Ave"], ["updated_at", "2014-06-28 15:57:26.378989"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.380319"], ["latitude", 40.73935542], ["longitude", -73.99931783], ["name", "W 15 St & 7 Ave"], ["updated_at", "2014-06-28 15:57:26.380319"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.381750"], ["latitude", 40.73223272], ["longitude", -73.98889957], ["name", "E 12 St & 3 Ave"], ["updated_at", "2014-06-28 15:57:26.381750"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.383103"], ["latitude", 40.75500254], ["longitude", -73.98014437], ["name", "W 44 St & 5 Ave"], ["updated_at", "2014-06-28 15:57:26.383103"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.384295"], ["latitude", 40.75038009], ["longitude", -73.98338988], ["name", "W 37 St & 5 Ave"], ["updated_at", "2014-06-28 15:57:26.384295"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.385408"], ["latitude", 40.7462009], ["longitude", -73.98855723], ["name", "Broadway & W 29 St"], ["updated_at", "2014-06-28 15:57:26.385408"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.386517"], ["latitude", 40.73314259], ["longitude", -73.97573881], ["name", "E 20 St & FDR Drive"], ["updated_at", "2014-06-28 15:57:26.386517"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.387627"], ["latitude", 40.75645824], ["longitude", -73.99372222], ["name", "W 39 St & 9 Ave"], ["updated_at", "2014-06-28 15:57:26.387627"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.388807"], ["latitude", 40.75066386], ["longitude", -74.00176802], ["name", "10 Ave & W 28 St"], ["updated_at", "2014-06-28 15:57:26.388807"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.389979"], ["latitude", 40.751551], ["longitude", -73.993934], ["name", "8 Ave & W 33 St"], ["updated_at", "2014-06-28 15:57:26.389979"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.391090"], ["latitude", 40.74096374], ["longitude", -73.98602213], ["name", "E 24 St & Park Ave S"], ["updated_at", "2014-06-28 15:57:26.391090"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.392375"], ["latitude", 40.75019995], ["longitude", -73.99093085], ["name", "W 33 St & 7 Ave"], ["updated_at", "2014-06-28 15:57:26.392375"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.393588"], ["latitude", 40.7568001], ["longitude", -73.98291153], ["name", "W 45 St & 6 Ave"], ["updated_at", "2014-06-28 15:57:26.393588"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.394876"], ["latitude", 40.74734825], ["longitude", -73.99723551], ["name", "W 26 St & 8 Ave"], ["updated_at", "2014-06-28 15:57:26.394876"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.396237"], ["latitude", 40.76269882], ["longitude", -73.99301222], ["name", "W 47 St & 10 Ave"], ["updated_at", "2014-06-28 15:57:26.396237"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.397456"], ["latitude", 40.73726186], ["longitude", -73.99238967], ["name", "E 16 St & 5 Ave"], ["updated_at", "2014-06-28 15:57:26.397456"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.398595"], ["latitude", 40.73704984], ["longitude", -73.99009296], ["name", "E 17 St & Broadway"], ["updated_at", "2014-06-28 15:57:26.398595"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.399764"], ["latitude", 40.74854862], ["longitude", -73.98808416], ["name", "Broadway & W 32 St"], ["updated_at", "2014-06-28 15:57:26.399764"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.401004"], ["latitude", 40.76915505], ["longitude", -73.98191841], ["name", "Broadway & W 60 St"], ["updated_at", "2014-06-28 15:57:26.401004"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.402372"], ["latitude", 40.76228826], ["longitude", -73.98336183], ["name", "Broadway & W 51 St"], ["updated_at", "2014-06-28 15:57:26.402372"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.403629"], ["latitude", 40.744219], ["longitude", -73.97121214], ["name", "FDR Drive & E 35 St"], ["updated_at", "2014-06-28 15:57:26.403629"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.405014"], ["latitude", 40.714215], ["longitude", -73.981346], ["name", "Henry St & Grand St"], ["updated_at", "2014-06-28 15:57:26.405014"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.406171"], ["latitude", 40.73827428], ["longitude", -73.98751968], ["name", "E 20 St & Park Ave"], ["updated_at", "2014-06-28 15:57:26.406171"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.407286"], ["latitude", 40.73221853], ["longitude", -73.98165557], ["name", "1 Ave & E 15 St"], ["updated_at", "2014-06-28 15:57:26.407286"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.408395"], ["latitude", 40.74901271], ["longitude", -73.98848395], ["name", "6 Ave & W 33 St"], ["updated_at", "2014-06-28 15:57:26.408395"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.409506"], ["latitude", 40.73912601], ["longitude", -73.97973776], ["name", "E 25 St & 2 Ave"], ["updated_at", "2014-06-28 15:57:26.409506"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.410686"], ["latitude", 40.76341379], ["longitude", -73.99667444], ["name", "W 46 St & 11 Ave"], ["updated_at", "2014-06-28 15:57:26.410686"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.411960"], ["latitude", 40.7454973], ["longitude", -74.00197139], ["name", "9 Ave & W 22 St"], ["updated_at", "2014-06-28 15:57:26.411960"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.413423"], ["latitude", 40.7606597], ["longitude", -73.98042047], ["name", "W 51 St & 6 Ave"], ["updated_at", "2014-06-28 15:57:26.413423"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.414724"], ["latitude", 40.72938685], ["longitude", -73.97772429], ["name", "E 14 St & Avenue B"], ["updated_at", "2014-06-28 15:57:26.414724"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.416080"], ["latitude", 40.7500727], ["longitude", -73.99839279], ["name", "W 29 St & 9 Ave"], ["updated_at", "2014-06-28 15:57:26.416080"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.417468"], ["latitude", 40.768254], ["longitude", -73.988639], ["name", "W 56 St & 10 Ave"], ["updated_at", "2014-06-28 15:57:26.417468"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.418757"], ["latitude", 40.76087502], ["longitude", -74.00277668], ["name", "12 Ave & W 40 St"], ["updated_at", "2014-06-28 15:57:26.418757"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.420114"], ["latitude", 40.76009437], ["longitude", -73.99461843], ["name", "W 43 St & 10 Ave"], ["updated_at", "2014-06-28 15:57:26.420114"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.421426"], ["latitude", 40.75206862], ["longitude", -73.96784384], ["name", "E 47 St & 1 Ave"], ["updated_at", "2014-06-28 15:57:26.421426"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.422555"], ["latitude", 40.752141], ["longitude", -73.979782], ["name", "E 41 St & Madison Ave"], ["updated_at", "2014-06-28 15:57:26.422555"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.423669"], ["latitude", 40.74780373], ["longitude", -73.9734419], ["name", "E 39 St & 2 Ave"], ["updated_at", "2014-06-28 15:57:26.423669"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.424782"], ["latitude", 40.752416], ["longitude", -73.97837], ["name", "E 42 St & Vanderbilt Ave"], ["updated_at", "2014-06-28 15:57:26.424782"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.425930"], ["latitude", 40.75992262], ["longitude", -73.97648516], ["name", "W 52 St & 5 Ave"], ["updated_at", "2014-06-28 15:57:26.425930"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.427064"], ["latitude", 40.75044999], ["longitude", -73.99481051], ["name", "8 Ave & W 31 St"], ["updated_at", "2014-06-28 15:57:26.427064"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.428254"], ["latitude", 40.75714758], ["longitude", -73.97207836], ["name", "E 51 St & Lexington Ave"], ["updated_at", "2014-06-28 15:57:26.428254"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.429389"], ["latitude", 40.75466591], ["longitude", -73.99138152], ["name", "W 38 St & 8 Ave"], ["updated_at", "2014-06-28 15:57:26.429389"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.430481"], ["latitude", 40.75527307], ["longitude", -73.98316936], ["name", "W 43 St & 6 Ave"], ["updated_at", "2014-06-28 15:57:26.430481"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.431652"], ["latitude", 40.75594159], ["longitude", -74.0021163], ["name", "W 34 St & 11 Ave"], ["updated_at", "2014-06-28 15:57:26.431652"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.432956"], ["latitude", 40.74765947], ["longitude", -73.98490707], ["name", "E 33 St & 5 Ave"], ["updated_at", "2014-06-28 15:57:26.432956"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.434127"], ["latitude", 40.74315566], ["longitude", -73.97434726], ["name", "E 33 St & 1 Ave"], ["updated_at", "2014-06-28 15:57:26.434127"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.435230"], ["latitude", 40.74290902], ["longitude", -73.97706058], ["name", "2 Ave & E 31 St"], ["updated_at", "2014-06-28 15:57:26.435230"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.436367"], ["latitude", 40.7575699], ["longitude", -73.99098507], ["name", "W 42 St & 8 Ave"], ["updated_at", "2014-06-28 15:57:26.436367"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.437540"], ["latitude", 40.771522], ["longitude", -73.990541], ["name", "11 Ave & W 59 St"], ["updated_at", "2014-06-28 15:57:26.437540"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.438735"], ["latitude", 40.71893904], ["longitude", -73.99266288], ["name", "Forsyth St & Broome St"], ["updated_at", "2014-06-28 15:57:26.438735"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.439973"], ["latitude", 40.710451], ["longitude", -73.960876], ["name", "S 5 Pl & S 4 St"], ["updated_at", "2014-06-28 15:57:26.439973"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.441210"], ["latitude", 40.75299641], ["longitude", -73.98721619], ["name", "Broadway & W 39 St"], ["updated_at", "2014-06-28 15:57:26.441210"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.442427"], ["latitude", 40.70255065], ["longitude", -74.0127234], ["name", "Water - Whitehall Plaza"], ["updated_at", "2014-06-28 15:57:26.442427"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.443648"], ["latitude", 40.74144387], ["longitude", -73.97536082], ["name", "1 Ave & E 30 St"], ["updated_at", "2014-06-28 15:57:26.443648"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.444998"], ["latitude", 40.74025878], ["longitude", -73.98409214], ["name", "Lexington Ave & E 24 St"], ["updated_at", "2014-06-28 15:57:26.444998"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.446326"], ["latitude", 40.75795248], ["longitude", -73.97787642], ["name", "W 49 St & 5 Ave"], ["updated_at", "2014-06-28 15:57:26.446326"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.447623"], ["latitude", 40.71534825], ["longitude", -73.96024116], ["name", "Metropolitan Ave & Bedford Ave"], ["updated_at", "2014-06-28 15:57:26.447623"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.448761"], ["latitude", 40.74147286], ["longitude", -73.98320928], ["name", "Lexington Ave & E 26 St"], ["updated_at", "2014-06-28 15:57:26.448761"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.449881"], ["latitude", 40.736502], ["longitude", -73.97809472], ["name", "E 23 St & 1 Ave"], ["updated_at", "2014-06-28 15:57:26.449881"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.451010"], ["latitude", 40.74444921], ["longitude", -73.98303529], ["name", "E 30 St & Park Ave S"], ["updated_at", "2014-06-28 15:57:26.451010"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.452159"], ["latitude", 40.70255088], ["longitude", -73.98940236], ["name", "Front St & Washington St"], ["updated_at", "2014-06-28 15:57:26.452159"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.453311"], ["latitude", 40.699773], ["longitude", -73.979927], ["name", "Sands St & Navy St"], ["updated_at", "2014-06-28 15:57:26.453311"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.454570"], ["latitude", 40.716887], ["longitude", -73.963198], ["name", "Wythe Ave & Metropolitan Ave"], ["updated_at", "2014-06-28 15:57:26.454570"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.455833"], ["latitude", 40.73416059], ["longitude", -73.98024289], ["name", "1 Ave & E 18 St"], ["updated_at", "2014-06-28 15:57:26.455833"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.457023"], ["latitude", 40.724399], ["longitude", -74.004704], ["name", "6 Ave & Broome St"], ["updated_at", "2014-06-28 15:57:26.457023"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.458129"], ["latitude", 40.70531194], ["longitude", -73.97100056], ["name", "Railroad Ave & Kay Ave"], ["updated_at", "2014-06-28 15:57:26.458129"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.459243"], ["latitude", 40.76590936], ["longitude", -73.97634151], ["name", "Central Park S & 6 Ave"], ["updated_at", "2014-06-28 15:57:26.459243"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.460545"], ["latitude", 40.70569254], ["longitude", -74.01677685], ["name", "Little West St & 1 Pl"], ["updated_at", "2014-06-28 15:57:26.460545"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.461988"], ["latitude", 40.71117444], ["longitude", -73.99682619], ["name", "Catherine St & Monroe St"], ["updated_at", "2014-06-28 15:57:26.461988"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.463164"], ["latitude", 40.72165481], ["longitude", -74.00234737], ["name", "Grand St & Greene St"], ["updated_at", "2014-06-28 15:57:26.463164"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.464275"], ["latitude", 40.739445], ["longitude", -73.976806], ["name", "E 27 St & 1 Ave"], ["updated_at", "2014-06-28 15:57:26.464275"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.465387"], ["latitude", 40.75022392], ["longitude", -73.97121414], ["name", "E 43 St & 2 Ave"], ["updated_at", "2014-06-28 15:57:26.465387"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.466522"], ["latitude", 40.75929124], ["longitude", -73.98859651], ["name", "W 45 St & 8 Ave"], ["updated_at", "2014-06-28 15:57:26.466522"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.467851"], ["latitude", 40.75849116], ["longitude", -73.95920622], ["name", "E 59 St & Sutton Pl"], ["updated_at", "2014-06-28 15:57:26.467851"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-06-28 15:57:26.469195"], ["latitude", 40.75968085], ["longitude", -73.97031366], ["name", "E 55 St & Lexington Ave"], ["updated_at", "2014-06-28 15:57:26.469195"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "stations" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-06-28 15:57:26.470348"], ["latitude", 40.711512], ["longitude", -74.015756], ["name", "South End Ave & Liberty St"], ["updated_at", "2014-06-28 15:57:26.470348"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-28 12:07:49 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+RuntimeError (Circular dependency detected while autoloading constant SeedHelper):
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/searches_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/raghav/.rvm/gems/ruby-2.0.0-p451/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/raghav/.rvm/gems/ruby-2.0.0-p451/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/raghav/.rvm/gems/ruby-2.0.0-p451/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (11.2ms)
+  Rendered /Users/raghav/.rvm/gems/ruby-2.0.0-p451/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (30.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-28 12:08:22 -0400
+
+LoadError (Unable to autoload constant SearchesController, expected /Users/raghav/Developer/CitiRide/app/controllers/searches_controller.rb to define it):
+  activesupport (4.1.1) lib/active_support/dependencies.rb:481:in `load_missing_constant'
+  activesupport (4.1.1) lib/active_support/dependencies.rb:180:in `const_missing'
+  activesupport (4.1.1) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.1) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.1) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.1) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.1) lib/active_support/inflector/methods.rb:236:in `constantize'
+  activesupport (4.1.1) lib/active_support/dependencies.rb:552:in `get'
+  activesupport (4.1.1) lib/active_support/dependencies.rb:583:in `constantize'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.1) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/raghav/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/raghav/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/raghav/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/raghav/.rvm/gems/ruby-2.0.0-p451/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/raghav/.rvm/gems/ruby-2.0.0-p451/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/raghav/.rvm/gems/ruby-2.0.0-p451/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/raghav/.rvm/gems/ruby-2.0.0-p451/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-28 12:08:44 -0400
+
+RuntimeError (Circular dependency detected while autoloading constant SeedHelper):
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/searches_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/raghav/.rvm/gems/ruby-2.0.0-p451/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/raghav/.rvm/gems/ruby-2.0.0-p451/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/raghav/.rvm/gems/ruby-2.0.0-p451/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/raghav/.rvm/gems/ruby-2.0.0-p451/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-28 12:09:36 -0400
+
+RuntimeError (Circular dependency detected while autoloading constant ApplicationHelper):
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/searches_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/raghav/.rvm/gems/ruby-2.0.0-p451/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/raghav/.rvm/gems/ruby-2.0.0-p451/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/raghav/.rvm/gems/ruby-2.0.0-p451/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/raghav/.rvm/gems/ruby-2.0.0-p451/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.2ms)
