@@ -23,8 +23,9 @@ module ApplicationHelper
   # def find_closest_bike(start_point)
   #   p station_list = get_station_list
   # end
+
+
   # args = {start_point: start_point, looking_for: "availableBikes" or "availableDocks"}
-  
   def find_closest(args)
     station_list = get_station_list
     location = Geocoder.search(args[:start_point]) #can maybe also use the GoogleDirections gem here? All we're doing here is getting the latitude and longitude
@@ -33,15 +34,16 @@ module ApplicationHelper
       distance = GeoDistance.distance(location[0].latitude, location[0].longitude, station["latitude"], station["longitude"]).miles.number
       stations_array << [station, distance]
     end
-    get_closest_station(stations_array, args[:looking_for])
+    get_closest_station(stations_array: stations_array, looking_for: args[:looking_for])
   end
 
   # args = {stations_array: stations_array, looking_for: looking_for}
-  def get_closest_station_bike(args)
+  def get_closest_station(args)
     stations_array = args[:stations_array]
     stations_array.sort!{|a,b| a[1] <=> b[1]}
     stations_array.each do |station|
-      return station[0,0] if (station[0,0][args[:looking_for])>2
+      p station
+      return station[0] if (station[0][args[:looking_for]])>2
     end
   end
 
@@ -51,5 +53,6 @@ module ApplicationHelper
     json_response = JSON.parse(res.body)
     json_response["stationBeanList"]
   end
+
 
 end
