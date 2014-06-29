@@ -36,6 +36,8 @@ gem 'geocoder'
 
 gem 'google_directions'
 
+gem 'gmaps4rails'
+
 group :development, :test do
   gem "rspec-rails", "~> 2.14.0"
   gem "factory_girl_rails", "~> 4.2.1"
