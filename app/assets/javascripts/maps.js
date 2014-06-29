@@ -1,13 +1,26 @@
+  function initialize() {
+    var myLatlng = new google.maps.LatLng(40.74025878, -73.98409214);
 
-function initialize() {
-  var myLatlng = new google.maps.LatLng(40.74025878, -73.98409214);
+    var myLatlng2 = new google.maps.LatLng(40.74025878, -73.9889214);
 
-  var mapOptions = {
-    zoom: 15,
-    center: myLatlng
-  }
-  map = new google.maps.Map(document.getElementById('map'), mapOptions);
-  displayRoute();
+    var mapOptions = {
+      zoom: 15,
+      center: myLatlng
+    }
+    map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+    // var marker = new google.maps.Marker({
+    //  position: myLatlng,
+    //  map: map,
+    //  title: 'Hello World!'
+    // });
+    // var marker2 = new google.maps.Marker({
+    //  position: myLatlng2,
+    //  map: map,
+    //  title: 'Hello World!'
+    // });
+
+displayRoute();
 }
 
 function displayRoute() {
@@ -33,9 +46,10 @@ function displayRoute() {
     }
   }
 
-  var directionsDisplay = new google.maps.DirectionsRenderer();
 
-  directionsDisplay.setMap(map);
+  var directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true}); 
+
+  directionsDisplay.setMap(map); 
 
   var request = {
     origin : myLatlng,
@@ -46,14 +60,9 @@ function displayRoute() {
   directionsService.route(request, function(response, status) {
     if (status == google.maps.DirectionsStatus.OK) {
       directionsDisplay.setDirections(response);
+      // directionsDisplay.suppressMarkers = true;
     }
   });
 }
 
-function add(){
-  alert("hello");
-}
-
-function renderMap() {
-  google.maps.event.addDomListener(window, 'load', initialize);
-}
+google.maps.event.addDomListener(window, 'load', initialize);
