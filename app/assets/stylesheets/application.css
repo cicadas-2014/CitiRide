@@ -20,7 +20,7 @@
 body {
   margin: 0;
   background-color: #F8F8F8;
-  height: 48em;
+  height: 40em;
 }
 
  * {
@@ -47,26 +47,24 @@ body {
 
 .container {
   width: 50%;
-  margin: 0 auto;
-  position: absolute;
-  top: 12%;
-  left: 25%;
+  margin: 2.5em auto 0 auto;
 }
 
 .home label {
   margin-top: 1em;
   display: block;
   color: #F9F9F9;
-  text-shadow: 0 -3px 3px rgba(0,0,0,0.6);
+  text-shadow: 0 -3px 4px rgba(0,0,0,0.8);
   font-weight: bold;
+  font-size: 1.1em;
 }
 
 .home input {
-  width: 20em;
+  width: 96%;
   margin-top: 0.6em;
   display: block;
   border-radius: 2px;
-  background-color: transparent;
+  background-color: rgba(0,0,0,0.3);
   border: 2px solid #F9F9F9;
   padding: 0.5em;
   color: #F9F9F9;
@@ -80,13 +78,15 @@ body {
 }
 
 .home input[type='submit'] {
-  margin-top: 1.5em;
+  margin: 5% auto 0 auto;
   border: 2px solid #F9F9F9;
-  font-size: 1em;
+  font-size: 1.1em;
+  line-height: 1em;
   font-weight: bold;
   color: #F9F9F9;
-  width: 12em;
+  width: 45%;
   text-shadow: 0 -3px 3px rgba(0,0,0,0.6);
+  display: block;
 }
 
 .home input[type='submit']:hover {
@@ -97,26 +97,25 @@ body {
 }
 
 .home form {
-  width: 42%;
+  width: 60%;
   margin: 0 auto;
-  margin-top: 2em;
+  margin-top: 1em;
   font-size: 1.2em;
 }
 
 .home .logo {
   font-family: 'Roboto Slab', serif;
-  margin: 0 auto;
-  width: 63%;
+  text-align: center;
+  margin: 0;
   font-size: 9em;
   color: #F9F9F9;
   text-shadow: 0 -4px 5px rgba(0,0,0,0.6);
 }
 
 footer {
-  position: relative;
-  top: 42em;
-  width: 50%;
-  left: 36%;
+  margin: 10em auto 0 auto;
+  width: 100%;
+  text-align: center;
   color: #3F3F3F;
 }
 
