@@ -4,8 +4,7 @@ class SearchesController < ApplicationController
   end
 
   def show
-    find_closest_stations(params[:s])
-    find_closest_stations(params[:d])
+
   end
 
   def login
